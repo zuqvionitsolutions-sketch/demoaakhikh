@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Meet the AAKHIKH team serving The House of Blessings in Guwahati and Shillong."
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://aakhikh.in/team" />
+    <link rel="icon" type="image/jpeg" href="logo.jpg" />
+    <title>Our Team | AAKHIKH</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      /* Hero section */
+      .team-hero {
+        min-height: 56vh;
+        padding: 150px 9% 85px;
+        display: flex;
+        align-items: end;
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        color: #fff;
+        background:
+          linear-gradient(100deg, rgba(5, 14, 30, 0.94), rgba(5, 14, 30, 0.52)),
+          url("2.webp") center/cover;
+      }
+      .team-hero:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(
+          circle at 76% 20%,
+          rgba(201, 168, 77, 0.24),
+          transparent 31%
+        );
+      }
+      .team-hero-content {
+        max-width: 650px;
+      }
+      .team-hero h1 {
+        font: 600 clamp(54px, 7vw, 88px)/0.9 var(--serif);
+        letter-spacing: -3px;
+        margin: 0 0 21px;
+      }
+      .team-hero h1 em {
+        color: #dfbc74;
+        font-weight: 500;
+      }
+      .team-hero p:not(.eyebrow) {
+        max-width: 500px;
+        margin: 0;
+        color: #e1e5e9;
+        font-size: 17px;
+        line-height: 1.65;
+      }
+      /* Team introduction and member cards */
+      .team-section {
+        padding: 105px 9%;
+        background: linear-gradient(160deg, #f8f4ee, #fff);
+      }
+      .team-intro {
+        text-align: center;
+        max-width: 610px;
+        margin: 0 auto 55px;
+      }
+      .team-intro h2 {
+        font: 600 clamp(34px, 4vw, 55px)/1.05 var(--serif);
+        letter-spacing: -2px;
+        margin: 0 0 15px;
+      }
+      .team-intro h2 em {
+        color: #a87931;
+        font-weight: 500;
+      }
+      .team-intro > p:last-child {
+        margin: 0;
+        color: #68717a;
+        line-height: 1.7;
+      }
+      .team-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+      }
+      .team-card {
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid rgba(201, 168, 77, 0.22);
+        border-radius: 18px;
+        box-shadow: 0 15px 38px rgba(8, 22, 41, 0.1);
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s,
+          border-color 0.3s;
+      }
+      .team-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(201, 168, 77, 0.7);
+        box-shadow: 0 25px 50px rgba(8, 22, 41, 0.17);
+      }
+      .team-photo {
+        height: 300px;
+        position: relative;
+        background-position: center top;
+        background-size: cover;
+        filter: saturate(0.94) contrast(1.04);
+        transition:
+          transform 0.5s ease,
+          filter 0.5s ease;
+      }
+      .team-photo::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(8, 20, 37, 0.25),
+          transparent 45%
+        );
+      }
+      .team-card:hover .team-photo {
+        transform: scale(1.045);
+        filter: saturate(1.05) contrast(1.05);
+      }
+      .team-card-body {
+        position: relative;
+        padding: 23px 22px 26px;
+        border-top: 3px solid #c9a84d;
+      }
+      .team-card-body::before {
+        content: "✦";
+        position: absolute;
+        right: 21px;
+        top: 21px;
+        color: #c9a84d;
+        font-size: 14px;
+      }
+      .team-card h3 {
+        font: 600 23px/1.1 var(--serif);
+        color: #0c1f3a;
+        margin: 0 0 8px;
+      }
+      .team-card p {
+        margin: 0;
+        font: 700 10px var(--sans);
+        letter-spacing: 1.7px;
+        text-transform: uppercase;
+        color: #a87931;
+      }
+      /* Visit invitation */
+      .team-cta {
+        padding: 78px 9%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        background: #081425;
+        color: #fff;
+      }
+      .team-cta h2 {
+        font: 600 clamp(31px, 4vw, 52px)/1.05 var(--serif);
+        margin: 0;
+      }
+      .team-cta h2 em {
+        color: #dfbc74;
+        font-weight: 500;
+      }
+      .team-cta p {
+        margin: 12px 0 0;
+        color: #b6c0ca;
+        max-width: 540px;
+      }
+      /* Responsive layouts */
+      @media (max-width: 1050px) {
+        .team-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 700px) {
+        .team-section {
+          padding: 75px 6%;
+        }
+        .team-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 15px;
+        }
+        .team-photo {
+          height: 250px;
+        }
+        .team-cta {
+          padding: 65px 6%;
+          display: block;
+        }
+        .team-cta .button {
+          margin-top: 28px;
+        }
+      }
+      @media (max-width: 440px) {
+        .team-grid {
+          grid-template-columns: 1fr;
+        }
+        .team-photo {
+          height: 300px;
+        }
+      }
+      .team-hero {
+        display: none;
+      }
+      .team-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .team-photo {
+        height: 230px;
+      }
+      @media (max-width: 700px) {
+        .team-section {
+          padding: 68px 20px 78px;
+        }
+        .team-intro {
+          margin-bottom: 38px;
+        }
+        .team-intro h2 {
+          font-size: clamp(36px, 10vw, 48px);
+          letter-spacing: -1.5px;
+        }
+        .team-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 18px;
+        }
+        .team-photo {
+          height: 280px;
+          background-position: center top;
+        }
+        .team-card {
+          min-width: 0;
+          border-radius: 16px;
+        }
+        .team-card-body {
+          min-height: 112px;
+          padding: 19px 17px 22px;
+        }
+        .team-card h3 {
+          overflow-wrap: anywhere;
+          font-size: clamp(19px, 4.8vw, 23px);
+          line-height: 1.05;
+        }
+        .team-card-body::before {
+          right: 14px;
+          top: 17px;
+        }
+      }
+      @media (max-width: 440px) {
+        .team-section {
+          padding-inline: 18px;
+        }
+        .team-grid {
+          grid-template-columns: 1fr;
+          gap: 22px;
+        }
+        .team-photo {
+          height: 390px;
+        }
+        .team-card-body {
+          min-height: auto;
+          padding: 22px 20px 25px;
+        }
+        .team-card h3 {
+          overflow-wrap: normal;
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Site header and primary navigation -->
+    <header class="site-header scrolled">
+      <a class="brand" href="index.html" aria-label="AAKHIKH home"
+        ><span>AAK</span>HIKH<small>The House of Blessings</small></a
+      >
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a><a href="about.html">About Us</a
+        ><a href="team.html" class="active" aria-current="page">Our Team</a
+        ><a href="messages.html">Messages</a><a href="events.html">Events</a
+        ><a href="locations.html">Locations</a><a href="donate.html">Donate</a
+        ><a href="resources.html">Resources</a
+        ><a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <a class="button button-small" href="online.html">Join Us Online</a>
+      </div>
+      <button class="menu-button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </header>
+    <!-- Mobile navigation -->
+    <div class="mobile-menu" aria-hidden="true">
+      <button class="close-menu" aria-label="Close menu">&times;</button
+      ><a href="index.html">Home</a><a href="about.html">About Us</a
+      ><a href="team.html">Our Team</a><a href="messages.html">Messages</a
+      ><a href="events.html">Events</a><a href="locations.html">Locations</a
+      ><a href="donate.html">Donate</a><a href="resources.html">Resources</a
+      ><a href="contact.html">Contact</a
+      ><a class="button" href="online.html">Join Us Online</a>
+    </div>
+    <main>
+      <!-- Team hero -->
+      <section class="team-hero">
+        <div class="team-hero-content">
+          <p class="eyebrow light">The people who serve</p>
+          <h1>Meet Our<br /><em>Team.</em></h1>
+          <p>
+            Faithful leaders serving our community with grace, devotion, and a
+            heart for Jesus.
+          </p>
+        </div>
+      </section>
+      <!-- Leadership team -->
+      <section class="team-section">
+        <div class="team-intro">
+          <p class="eyebrow">Our team</p>
+          <h2>Serving with <em>Purpose</em></h2>
+          <p>
+            We are grateful for the people who help make AAKHIKH a welcoming
+            home for every heart.
+          </p>
+        </div>
+        <div class="team-grid">
+          <article class="team-card">
+            <div
+              class="team-photo"
+              style="background-image: url(&quot;team-nayan.png&quot;)"
+            ></div>
+            <div class="team-card-body">
+              <h3>Pastor Nayan</h3>
+              <p>Pastor</p>
+            </div>
+          </article>
+          <article class="team-card">
+            <div
+              class="team-photo"
+              style="background-image: url(&quot;team-rasmi.png&quot;)"
+            ></div>
+            <div class="team-card-body">
+              <h3>Elder Rasmi</h3>
+              <p>Elder</p>
+            </div>
+          </article>
+          <article class="team-card">
+            <div
+              class="team-photo"
+              style="background-image: url(&quot;team-wanshai.png&quot;)"
+            ></div>
+            <div class="team-card-body">
+              <h3>Wanshai</h3>
+              <p>Leader</p>
+            </div>
+          </article>
+          <article class="team-card">
+            <div
+              class="team-photo"
+              style="background-image: url(&quot;team-joseph.png&quot;)"
+            ></div>
+            <div class="team-card-body">
+              <h3>Deacon Jo</h3>
+              <p>Deacon</p>
+            </div>
+          </article>
+          <article class="team-card">
+            <div
+              class="team-photo"
+              style="background-image: url(&quot;team-kriti.png&quot;)"
+            ></div>
+            <div class="team-card-body">
+              <h3>Deacon Kriti</h3>
+              <p>Deacon</p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- Call to action -->
+      <section class="team-cta">
+        <div>
+          <p class="eyebrow light">Come as you are</p>
+          <h2>We would love to<br /><em>meet you.</em></h2>
+          <p>
+            Join us at one of our upcoming services and become part of the
+            AAKHIKH family.
+          </p>
+        </div>
+        <a class="button" href="locations.html">Find a Location</a>
+      </section>
+    </main>
+    <!-- Site footer -->
+    <footer>
+      <div class="copyright">
+        &copy; 2026 AAKHIKH: The House of Blessings. All Rights Reserved.
+      </div>
+    </footer>
+    <!-- Shared site interactions -->
+    <script src="script.js"></script>
+    <script>
+      // Add team leaders that are not included in the original HTML cards.
+      document
+        .querySelector(".team-grid")
+        ?.insertAdjacentHTML(
+          "afterbegin",
+          '<article class="team-card"><div class="team-photo" style="background-image:url(\'team-sonia.png\')"></div><div class="team-card-body"><h3>Rev. Sonia Bhattacharya</h3><p>Lead Pastor</p></div></article>',
+        );
+      document
+        .querySelector(".team-grid")
+        ?.insertAdjacentHTML(
+          "afterbegin",
+          '<article class="team-card"><div class="team-photo" style="background-image:url(\'team-sanju.png\')"></div><div class="team-card-body"><h3>Sanju Borah</h3><p>Team Leader</p></div></article>',
+        );
+      document
+        .querySelector(".team-grid")
+        ?.insertAdjacentHTML(
+          "afterbegin",
+          '<article class="team-card"><div class="team-photo" style="background-image:url(\'team-arpana1-adjusted.png\')"></div><div class="team-card-body"><h3>Arpana Basumatary</h3><p>Team Leader</p></div></article>',
+        );
+      document
+        .querySelector(".team-grid")
+        ?.insertAdjacentHTML(
+          "afterbegin",
+          '<article class="team-card"><div class="team-photo" style="background-image:url(\'team-monica-wide.png\')"></div><div class="team-card-body"><h3>Monica Bhattacharya</h3><p>Team Leader</p></div></article>',
+        );
+      const teamGrid = document.querySelector(".team-grid");
+      // Map short card labels to each leader's full display name and role.
+      const leaderDetails = [
+        ["Rev. Sonia Bhattacharya", "Rev. Sonia Bhattacharya", "Pastor"],
+        ["Monica Bhattacharya", "Pastor Monica Bhattacharya", "Pastor"],
+        ["Pastor Nayan", "Pastor Nayanjyoti Baruah", "Pastor"],
+        ["Wanshai", "Elder Wanshai Jyrwa", "Elder"],
+        ["Elder Rasmi", "Elder Rasmi Sarma", "Elder"],
+        ["Sanju Borah", "Elder Sanju Borah", "Elder"],
+        ["Arpana Basumatary", "Deacon Arpana Basumatary", "Deacon"],
+        ["Deacon Jo", "Deacon Dr. Joseph Gowala", "Deacon"],
+        ["Deacon Kriti", "Deacon Kriti Jinnia Sona", "Deacon"],
+      ];
+      const leaderCards = [];
+      // Update each matching card and retain the required display order.
+      leaderDetails.forEach(([match, name, role]) => {
+        const card = [...teamGrid.querySelectorAll(".team-card")].find((item) =>
+          item.textContent.includes(match),
+        );
+        if (card) {
+          card.querySelector("h3").textContent = name;
+          card.querySelector(".team-card-body p").textContent = role;
+          leaderCards.push(card);
+        }
+      });
+      if (teamGrid) teamGrid.append(...leaderCards);
+
+      // Replace the introductory heading after the cards are ready.
+       const teamHeading = document.querySelector(".team-intro h2");
+      if (teamHeading) teamHeading.innerHTML = "Leaders of <em>AAKHIKH</em>";
+    </script>
+  </body>
+</html>

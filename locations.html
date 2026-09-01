@@ -1,0 +1,848 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Find an AAKHIKH church near you in Guwahati or Shillong. Join us every Sunday for worship, fellowship, and community.">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aakhikh.in/locations" />
+
+  <!-- Favicon / AAKHIKH Logo Assets -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
+  <title>Locations | AAKHIKH – The House of Blessings</title>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Locations | AAKHIKH – The House of Blessings" />
+  <meta property="og:description" content="Find an AAKHIKH church near you in Guwahati or Shillong. Join us every Sunday for worship, fellowship, and community." />
+  <meta property="og:image" content="https://aakhikh.in/logo.jpg" />
+  <meta property="og:url" content="https://aakhikh.in/locations" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AAKHIKH" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Locations | AAKHIKH – The House of Blessings" />
+  <meta name="twitter:description" content="Find an AAKHIKH church near you in Guwahati or Shillong. Join us every Sunday for worship, fellowship, and community." />
+  <meta name="twitter:image" content="https://aakhikh.in/logo.jpg" />
+
+  <!-- Google Search Console Verification Placeholder -->
+  <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── LOCATIONS PAGE ─────────────────────────────────── */
+
+    /* Hero */
+    .loc-hero {
+      position: relative;
+      min-height: 62vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      padding: 140px 6% 100px;
+      color: #fff;
+      isolation: isolate;
+    }
+
+    .loc-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(165deg, rgba(4,12,27,.96) 0%, rgba(4,12,27,.62) 55%, rgba(4,12,27,.85) 100%),
+        url('1 (1.webp') center / cover no-repeat;
+      animation: heroZoom 18s ease alternate infinite;
+    }
+
+    @keyframes heroZoom {
+      to { transform: scale(1.07); }
+    }
+
+    .loc-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(ellipse 70% 55% at 50% 80%, rgba(201,168,77,.22), transparent 70%);
+    }
+
+    .loc-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(201,168,77,.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,77,.06) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .loc-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,77,.18);
+      border: 1px solid rgba(201,168,77,.35);
+      color: #e8c97a;
+      font: 700 10px/1 var(--sans);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+      backdrop-filter: blur(6px);
+    }
+
+    .loc-hero-badge::before {
+      content: '✦';
+      font-size: 8px;
+    }
+
+    .loc-hero h1 {
+      font: 600 clamp(50px,7vw,90px)/.9 var(--serif);
+      letter-spacing: -3px;
+      margin: 0 0 22px;
+      max-width: 780px;
+    }
+
+    .loc-hero h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: #d4b76a;
+    }
+
+    .loc-hero-sub {
+      font-size: clamp(15px,1.8vw,18px);
+      color: rgba(255,255,255,.72);
+      max-width: 500px;
+      line-height: 1.7;
+      margin: 0 0 48px;
+    }
+
+    .loc-scroll-hint {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,.4);
+      font: 600 9px/1 var(--sans);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      animation: bounce 2s ease infinite;
+    }
+
+    .loc-scroll-hint span {
+      display: block;
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, rgba(201,168,77,.6), transparent);
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
+    /* ── STATS BAR ─────────────────────────────────────── */
+    .loc-stats {
+      background: var(--night);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-bottom: 1px solid rgba(201,168,77,.18);
+    }
+
+    .loc-stat {
+      padding: 30px 20px;
+      text-align: center;
+      border-right: 1px solid rgba(255,255,255,.07);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .loc-stat:last-child { border-right: none; }
+
+    .loc-stat::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width .4s ease, left .4s ease;
+    }
+
+    .loc-stat:hover::after { width: 100%; left: 0; }
+
+    .loc-stat-number {
+      font: 700 clamp(22px,3.5vw,38px)/1 var(--serif);
+      color: var(--gold);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .loc-stat-label {
+      font: 600 10px/1 var(--sans);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+
+    /* ── LOCATION TABS ─────────────────────────────────── */
+    .loc-main {
+      background: #f8f4ee;
+      padding: 80px 5% 100px;
+    }
+
+    .loc-tabs-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .loc-tabs-header p.eyebrow {
+      margin-bottom: 14px;
+    }
+
+    .loc-tabs-header h2 {
+      font: 600 clamp(34px,4.5vw,58px)/1.05 var(--serif);
+      letter-spacing: -2px;
+      margin: 0 0 40px;
+    }
+
+    .loc-tab-switcher {
+      display: inline-flex;
+      background: rgba(8,22,41,.07);
+      border-radius: 100px;
+      padding: 5px;
+      gap: 4px;
+    }
+
+    .loc-tab-btn {
+      padding: 10px 30px;
+      font: 700 11px/1 var(--sans);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 100px;
+      background: transparent;
+      color: rgba(10,26,46,.5);
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+
+    .loc-tab-btn.active {
+      background: var(--night);
+      color: var(--gold);
+      box-shadow: 0 4px 20px rgba(8,22,41,.3);
+    }
+
+    /* ── LOCATION CARD ─────────────────────────────────── */
+    .loc-card {
+      display: none;
+      border-radius: 20px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow:
+        0 2px 4px rgba(8,22,41,.04),
+        0 12px 40px rgba(8,22,41,.1),
+        0 40px 80px rgba(8,22,41,.08);
+      animation: cardIn .45s cubic-bezier(.22,.97,.31,1) both;
+    }
+
+    .loc-card.active { display: grid; grid-template-columns: 1fr 1fr; }
+
+    @keyframes cardIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .loc-map {
+      position: relative;
+      min-height: 480px;
+      overflow: hidden;
+    }
+
+    .loc-map iframe {
+      width: 100%; height: 100%; border: none; display: block;
+      filter: saturate(.85) contrast(1.05);
+      transition: filter .3s;
+      position: absolute; inset: 0;
+    }
+
+    .loc-map:hover iframe { filter: saturate(1) contrast(1); }
+
+    /* The live Google Maps iframe is blocked in some browsers and embedded previews.
+       Use a lightweight inline map illustration instead, with a direct map link. */
+    .loc-map-static {
+      background: linear-gradient(145deg, #e9e2d3 0%, #f7f1e5 100%);
+      isolation: isolate;
+    }
+
+    .loc-map-static::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: .55;
+      background-image:
+        linear-gradient(28deg, transparent 42%, rgba(255,255,255,.9) 43%, rgba(255,255,255,.9) 44%, transparent 45%),
+        linear-gradient(122deg, transparent 47%, rgba(255,255,255,.9) 48%, rgba(255,255,255,.9) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(201,168,77,.08) 1px, transparent 1px),
+        linear-gradient(rgba(201,168,77,.08) 1px, transparent 1px);
+      background-size: 260px 180px, 320px 240px, 48px 48px, 48px 48px;
+    }
+
+    .loc-map-static::after {
+      content: '';
+      position: absolute;
+      inset: 14% 18% 18% 12%;
+      z-index: -1;
+      border: 1px solid rgba(112,126,121,.22);
+      border-radius: 45% 55% 42% 58%;
+      transform: rotate(-8deg);
+      box-shadow: 120px 35px 0 -40px rgba(255,255,255,.28), -80px 95px 0 -35px rgba(255,255,255,.25);
+    }
+
+    .loc-map-art {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: .48;
+    }
+
+    .loc-map-marker {
+      position: absolute;
+      top: 50%;
+      left: 52%;
+      width: 52px;
+      height: 52px;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      border-radius: 50% 50% 50% 0;
+      background: var(--gold);
+      color: #fff;
+      font-size: 18px;
+      box-shadow: 0 8px 18px rgba(90,65,20,.26), 0 0 0 8px rgba(201,168,77,.18);
+      transform: translate(-50%, -62%) rotate(-45deg);
+    }
+
+    .loc-map-marker::after {
+      content: '✦';
+      transform: rotate(45deg);
+    }
+
+    .loc-map-link {
+      position: absolute;
+      left: 20px;
+      bottom: 20px;
+      z-index: 4;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 15px;
+      border-radius: 10px;
+      background: rgba(8,22,41,.92);
+      color: #fff;
+      font: 700 11px/1 var(--sans);
+      letter-spacing: .3px;
+      box-shadow: 0 5px 18px rgba(8,22,41,.2);
+      transition: background .2s, transform .2s;
+    }
+
+    .loc-map-link:hover {
+      background: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    .loc-map-overlay { 
+      position: absolute;
+      top: 20px; left: 20px; z-index: 3;
+      background: rgba(255,255,255,.93);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0,0,0,.12);
+    }
+
+    .loc-map-pin {
+      width: 36px; height: 36px;
+      background: var(--gold);
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .loc-map-pin::after {
+      content: '✦';
+      transform: rotate(45deg);
+      color: #fff;
+      font-size: 12px;
+      display: block;
+    }
+
+    .loc-map-label {
+      font: 700 11px/1.4 var(--sans);
+      color: var(--ink);
+    }
+
+    .loc-map-label small {
+      display: block;
+      font-weight: 400;
+      font-size: 10px;
+      color: #8892a2;
+      margin-top: 2px;
+    }
+
+    .loc-details {
+      padding: 52px 52px 52px 56px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .loc-details .eyebrow { margin-bottom: 10px; }
+
+    .loc-details h3 {
+      font: 600 clamp(26px,2.8vw,38px)/1.1 var(--serif);
+      letter-spacing: -1px;
+      margin: 0 0 24px;
+      color: var(--ink);
+    }
+
+    .loc-address-block {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+      padding: 20px;
+      background: #f8f4ee;
+      border-radius: 12px;
+      border-left: 3px solid var(--gold);
+    }
+
+    .loc-address-icon {
+      width: 40px; height: 40px;
+      background: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .loc-address-block address {
+      font-style: normal;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--ink);
+    }
+
+    .loc-schedule-title {
+      font: 700 10px/1 var(--sans);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #8892a2;
+      margin: 0 0 16px;
+    }
+
+    .loc-schedule-list {
+      list-style: none;
+      margin: 0 0 36px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .loc-schedule-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: #f8f4ee;
+      border-radius: 10px;
+      transition: background .2s, transform .2s;
+    }
+
+    .loc-schedule-item:hover {
+      background: #f0e9dc;
+      transform: translateX(4px);
+    }
+
+    .loc-sched-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px rgba(201,168,77,.2);
+    }
+
+    .loc-sched-day {
+      font: 700 12px/1 var(--sans);
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      min-width: 75px;
+    }
+
+    .loc-sched-time {
+      font: 500 14px/1 var(--serif);
+      color: var(--ink);
+    }
+
+    .loc-btn-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .loc-divider {
+      width: 48px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin: 0 0 24px;
+      border-radius: 2px;
+    }
+
+    /* ── BOTTOM CTA ────────────────────────────────────── */
+    .loc-cta {
+      position: relative;
+      background: var(--night);
+      padding: 100px 6%;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .loc-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 50% 110%, rgba(201,168,77,.22), transparent 65%),
+        radial-gradient(circle 400px at 10% 0%, rgba(201,168,77,.08), transparent);
+    }
+
+    .loc-cta::after {
+      content: '';
+      position: absolute;
+      top: -180px; right: -180px;
+      width: 500px; height: 500px;
+      border: 1px solid rgba(201,168,77,.12);
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .loc-cta-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .loc-cta-inner .eyebrow.light { margin-bottom: 18px; }
+
+    .loc-cta h2 {
+      font: 600 clamp(38px,5vw,66px)/.95 var(--serif);
+      letter-spacing: -2.5px;
+      margin: 0 0 20px;
+      color: #fff;
+    }
+
+    .loc-cta h2 em {
+      font-weight: 500;
+      font-style: italic;
+      color: #d4b76a;
+    }
+
+    .loc-cta p {
+      font-size: 16px;
+      color: rgba(255,255,255,.65);
+      line-height: 1.75;
+      margin: 0 auto 40px;
+      max-width: 480px;
+    }
+
+    .loc-cta-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .loc-orb {
+      position: absolute;
+      border-radius: 50%;
+      opacity: .06;
+      background: var(--gold);
+      z-index: 0;
+    }
+
+    .loc-orb-1 { width: 250px; height: 250px; bottom: -80px; left: -60px; }
+    .loc-orb-2 { width: 140px; height: 140px; top: 60px; right: 15%; }
+
+    /* ── COMING SOON ───────────────────────────────────── */
+    .loc-coming-soon {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #e8dfc9, #f5ede0);
+      z-index: 2;
+      gap: 12px;
+    }
+
+    .loc-coming-soon-icon {
+      width: 70px; height: 70px;
+      border-radius: 50%;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(201,168,77,.35);
+      animation: pulse 2.5s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 10px 30px rgba(201,168,77,.35); }
+      50% { box-shadow: 0 10px 50px rgba(201,168,77,.55), 0 0 0 12px rgba(201,168,77,.1); }
+    }
+
+    .loc-coming-soon h4 {
+      font: 600 20px var(--serif);
+      margin: 0;
+      color: var(--ink);
+    }
+
+    .loc-coming-soon p {
+      font-size: 13px;
+      color: #8892a2;
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ────────────────────────────────────── */
+    @media (max-width: 960px) {
+      .loc-card.active { grid-template-columns: 1fr; }
+      .loc-map { min-height: 300px; }
+      .loc-details { padding: 40px 36px; }
+    }
+
+    @media (max-width: 640px) {
+      .loc-hero { padding: 130px 6% 80px; }
+      .loc-hero h1 { letter-spacing: -2px; }
+      .loc-main { padding: 60px 5% 75px; }
+      .loc-stats { grid-template-columns: 1fr; }
+      .loc-stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); }
+      .loc-stat:last-child { border-bottom: none; }
+      .loc-details { padding: 32px 24px; }
+      .loc-cta { padding: 75px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header scrolled">
+    <a class="brand" href="index.html"><span>AAK</span>HIKH<small>The House of Blessings</small></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="messages.html">Messages</a>
+      <a href="events.html">Events</a>
+      <a href="locations.html">Locations</a>
+      <a href="donate.html">Donate</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="button button-small" href="online.html">Join Us Online</a></div>
+    <button class="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="close-menu" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="messages.html">Messages</a>
+    <a href="events.html">Events</a><a href="locations.html">Locations</a><a href="donate.html">Donate</a>
+    <a href="resources.html">Resources</a><a href="contact.html">Contact</a>
+    <a class="button" href="online.html">Join Us Online</a>
+  </div>
+
+  <main>
+    <!-- HERO (removed)
+    <section class="loc-hero" aria-label="Locations hero">
+      <div class="loc-hero-bg" aria-hidden="true"></div>
+      <div class="loc-hero-badge">Our Locations</div>
+      <h1>Find AAKHIKH<br><em>Near You.</em></h1>
+      <p class="loc-hero-sub">Your local home for worship, community, and hope — waiting to welcome you exactly as you are.</p>
+      <div class="loc-scroll-hint" aria-hidden="true">
+        <span></span>
+        Explore
+      </div>
+    </section> -->
+
+    <!-- STATS BAR (removed)
+    <div class="loc-stats" aria-label="Quick facts">
+      <div class="loc-stat">
+        <span class="loc-stat-number">2</span>
+        <span class="loc-stat-label">Campuses</span>
+      </div>
+      <div class="loc-stat">
+        <span class="loc-stat-number">Every Sunday</span>
+        <span class="loc-stat-label">Worship Services</span>
+      </div>
+      <div class="loc-stat">
+        <span class="loc-stat-number">1 Family</span>
+        <span class="loc-stat-label">One Church</span>
+      </div>
+    </div> -->
+
+    <!-- LOCATION CARDS -->
+    <section class="loc-main">
+      <div class="loc-tabs-header">
+        <p class="eyebrow">Choose a Campus</p>
+        <h2>Where will you <em>join us?</em></h2>
+        <div class="loc-tab-switcher" role="tablist" aria-label="Select campus">
+          <button class="loc-tab-btn active" role="tab" aria-selected="true" data-loc="guwahati" id="tab-guwahati" aria-controls="card-guwahati">Guwahati</button>
+          <button class="loc-tab-btn" role="tab" aria-selected="false" data-loc="shillong" id="tab-shillong" aria-controls="card-shillong">Shillong</button>
+        </div>
+      </div>
+
+      <!-- Guwahati -->
+      <div class="loc-card active" id="card-guwahati" role="tabpanel" aria-labelledby="tab-guwahati">
+        <div class="loc-map loc-map-static">
+          <svg class="loc-map-art" viewBox="0 0 800 480" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-30 390 C130 315 160 410 285 315 S470 120 830 170" fill="none" stroke="#fff" stroke-width="24"/>
+            <path d="M-30 390 C130 315 160 410 285 315 S470 120 830 170" fill="none" stroke="#d4c6a8" stroke-width="2"/>
+            <path d="M110 -20 C210 110 155 205 270 260 S520 350 650 520" fill="none" stroke="#fff" stroke-width="18"/>
+            <path d="M110 -20 C210 110 155 205 270 260 S520 350 650 520" fill="none" stroke="#d4c6a8" stroke-width="2"/>
+            <path d="M450 -20 C420 85 525 135 500 235 S570 360 790 500" fill="none" stroke="#fff" stroke-width="12"/>
+            <path d="M450 -20 C420 85 525 135 500 235 S570 360 790 500" fill="none" stroke="#d4c6a8" stroke-width="2"/>
+          </svg>
+          <div class="loc-map-marker" aria-hidden="true"></div>
+          <div class="loc-map-overlay" aria-hidden="true">
+            <div class="loc-map-pin"></div>
+            <div class="loc-map-label">
+              Guwahati Campus
+              <small>Assam, India</small>
+            </div>
+          </div>
+          <a class="loc-map-link" href="https://maps.app.goo.gl/ZLyge9s8QF4YSoKNA" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="loc-details">
+          <p class="eyebrow">Guwahati Campus</p>
+          <h3>AAKHIKH:<br>The House of Blessings</h3>
+          <div class="loc-divider" aria-hidden="true"></div>
+          <div class="loc-address-block">
+            <div class="loc-address-icon" aria-hidden="true">📍</div>
+            <address>
+              Bhuyan Mansion, 3rd Floor<br>
+              Near UCO Bank, Guwahati Club<br>
+              Guwahati, Assam, India
+            </address>
+          </div>
+          <div class="loc-btn-row">
+            <a class="button" href="https://maps.app.goo.gl/ZLyge9s8QF4YSoKNA" target="_blank" rel="noopener noreferrer" id="directions-guwahati">Get Directions</a>
+            <a class="button button-outline" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shillong -->
+      <div class="loc-card" id="card-shillong" role="tabpanel" aria-labelledby="tab-shillong">
+        <div class="loc-map loc-map-static">
+          <svg class="loc-map-art" viewBox="0 0 800 480" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M-30 155 C130 230 175 105 310 190 S515 380 830 285" fill="none" stroke="#fff" stroke-width="24"/>
+            <path d="M-30 155 C130 230 175 105 310 190 S515 380 830 285" fill="none" stroke="#d4c6a8" stroke-width="2"/>
+            <path d="M230 -20 C310 105 250 185 390 245 S540 340 570 520" fill="none" stroke="#fff" stroke-width="18"/>
+            <path d="M230 -20 C310 105 250 185 390 245 S540 340 570 520" fill="none" stroke="#d4c6a8" stroke-width="2"/>
+            <path d="M650 -20 C590 90 665 155 610 255 S690 390 820 430" fill="none" stroke="#fff" stroke-width="12"/>
+            <path d="M650 -20 C590 90 665 155 610 255 S690 390 820 430" fill="none" stroke="#d4c6a8" stroke-width="2"/>
+          </svg>
+          <div class="loc-map-marker" aria-hidden="true"></div>
+          <div class="loc-map-overlay" aria-hidden="true">
+            <div class="loc-map-pin"></div>
+            <div class="loc-map-label">
+              Shillong Campus
+              <small>Meghalaya, India</small>
+            </div>
+          </div>
+          <a class="loc-map-link" href="https://maps.app.goo.gl/WADtnnQnJ7XeVzfE7?g_st=aw" target="_blank" rel="noopener noreferrer">Open in Google Maps <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="loc-details">
+          <p class="eyebrow">Shillong Campus</p>
+          <h3>AAKHIKH –<br>Shillong</h3>
+          <div class="loc-divider" aria-hidden="true"></div>
+          <div class="loc-address-block">
+            <div class="loc-address-icon" aria-hidden="true">🏛️</div>
+            <address>
+              Alabaster Prayer Room<br>
+              HV7X+5C7, Motinagar, Nongthymmai<br>
+              Shillong, Meghalaya 793014, India
+            </address>
+          </div>
+          <div class="loc-btn-row">
+            <a class="button" href="https://maps.app.goo.gl/WADtnnQnJ7XeVzfE7?g_st=aw" target="_blank" rel="noopener noreferrer" id="directions-shillong">Get Directions</a>
+            <a class="button button-outline" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOTTOM CTA -->
+    <section class="loc-cta" aria-label="Invitation">
+      <div class="loc-orb loc-orb-1" aria-hidden="true"></div>
+      <div class="loc-orb loc-orb-2" aria-hidden="true"></div>
+      <div class="loc-cta-inner">
+        <p class="eyebrow light">Every Sunday</p>
+        <h2>Come as you are.<br><em>Leave with hope.</em></h2>
+        <p>Join us for worship, fellowship, and a place to grow in faith with people who will walk alongside you — no matter where you are in your journey.</p>
+        <div class="loc-cta-buttons">
+          <a class="button" href="online.html">Join Us Online</a>
+          <a class="button button-ghost" href="contact.html">Get in Touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">© 2026 AAKHIKH: The House of Blessings. All Rights Reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    const tabBtns = document.querySelectorAll('.loc-tab-btn');
+    const locCards = document.querySelectorAll('.loc-card');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.loc;
+        tabBtns.forEach(b => {
+          b.classList.toggle('active', b === btn);
+          b.setAttribute('aria-selected', String(b === btn));
+        });
+        locCards.forEach(card => {
+          card.classList.toggle('active', card.id === 'card-' + target);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

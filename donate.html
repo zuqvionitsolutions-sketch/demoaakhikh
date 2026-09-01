@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Support the mission and land fund of AAKHIKH – The House of Blessings through secure UPI Scan & Pay.">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aakhikh.in/donate" />
+
+  <!-- Favicon / AAKHIKH Logo Assets -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
+  <title>Donate | AAKHIKH – The House of Blessings</title>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Donate | AAKHIKH – The House of Blessings" />
+  <meta property="og:description" content="Support the mission and land fund of AAKHIKH – The House of Blessings through secure UPI Scan & Pay." />
+  <meta property="og:image" content="https://aakhikh.in/logo.jpg" />
+  <meta property="og:url" content="https://aakhikh.in/donate" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AAKHIKH" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Donate | AAKHIKH – The House of Blessings" />
+  <meta name="twitter:description" content="Support the mission and land fund of AAKHIKH – The House of Blessings through secure UPI Scan & Pay." />
+  <meta name="twitter:image" content="https://aakhikh.in/logo.jpg" />
+
+  <!-- Google Search Console Verification Placeholder -->
+  <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .donate-only {
+      min-height: calc(100vh - 90px);
+      padding: 120px 4% 70px;
+      background: #f8f4ee;
+    }
+
+    .donation-card {
+      width: min(100%, 1060px);
+      margin: 0 auto;
+      padding: 46px 48px 42px;
+      border-radius: 26px;
+      background: #fff;
+      box-shadow: 0 20px 60px rgba(8,22,41,.1), 0 4px 16px rgba(8,22,41,.05);
+    }
+
+    .donation-heading {
+      max-width: 720px;
+      margin: 0 auto 34px;
+      text-align: center;
+    }
+
+    .donation-heading h1 {
+      margin: 0 0 10px;
+      color: var(--ink);
+      font: 500 clamp(30px, 4vw, 43px)/1.15 var(--serif);
+      letter-spacing: -1.1px;
+    }
+
+    .donation-heading p {
+      margin: 0;
+      color: #68717a;
+      font-size: clamp(14px, 1.8vw, 17px);
+    }
+
+    .qr-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .qr-option {
+      position: relative;
+      overflow: hidden;
+      padding: 28px 24px 22px;
+      border: 1px solid rgba(10,26,46,.12);
+      border-radius: 18px;
+      background: #fbfaf7;
+      text-align: center;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .qr-option:hover {
+      transform: translateY(-4px);
+      border-color: rgba(201,168,77,.48);
+      box-shadow: 0 14px 30px rgba(8,22,41,.1);
+    }
+
+    .qr-number {
+      position: absolute;
+      top: 16px;
+      right: 18px;
+      color: rgba(10,26,46,.2);
+      font: 600 13px var(--sans);
+      letter-spacing: 1px;
+    }
+
+    .qr-option h2 {
+      margin: 0 0 5px;
+      color: var(--ink);
+      font: 600 clamp(25px, 3vw, 31px)/1.2 var(--serif);
+      letter-spacing: -.5px;
+    }
+
+    .qr-purpose {
+      min-height: 48px;
+      max-width: 340px;
+      margin: 0 auto 18px;
+      color: #68717a;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .qr-image {
+      display: block;
+      width: 100%;
+      max-width: 362px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 14px;
+      background: #fff;
+    }
+
+    .qr-scan-note {
+      display: block;
+      margin-top: 15px;
+      color: #8a6a20;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 760px) {
+      .donate-only { padding: 104px 4% 55px; }
+      .donation-card { padding: 34px 20px 28px; border-radius: 20px; }
+      .donation-heading { margin-bottom: 26px; }
+      .qr-grid { grid-template-columns: 1fr; }
+      .qr-option { width: min(100%, 420px); margin: 0 auto; }
+      .qr-purpose { min-height: 0; }
+    }
+
+    @media (max-width: 420px) {
+      .donate-only { padding-inline: 0; padding-top: 92px; background: #fff; }
+      .donation-card { padding-inline: 14px; border-radius: 0; box-shadow: none; }
+      .qr-option { padding: 25px 14px 20px; }
+    }
+  </style>
+</head>
+<body class="donate-page">
+  <header class="site-header scrolled">
+    <a class="brand" href="index.html"><span>AAK</span>HIKH<small>The House of Blessings</small></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="messages.html">Messages</a>
+      <a href="events.html">Events</a>
+      <a href="locations.html">Locations</a>
+      <a href="donate.html">Donate</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="button button-small" href="online.html">Join Us Online</a></div>
+    <button class="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="close-menu" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="messages.html">Messages</a>
+    <a href="events.html">Events</a><a href="locations.html">Locations</a><a href="donate.html">Donate</a>
+    <a href="resources.html">Resources</a><a href="contact.html">Contact</a>
+    <a class="button" href="online.html">Join Us Online</a>
+  </div>
+
+  <main class="donate-only">
+    <section class="donation-card" aria-labelledby="donation-title">
+      <div class="donation-heading">
+        <h1 id="donation-title">Choose where you would like to give</h1>
+        <p>Open any UPI payment app and scan the appropriate QR code below.</p>
+      </div>
+
+      <div class="qr-grid">
+        <article class="qr-option">
+          <span class="qr-number" aria-hidden="true">01</span>
+          <h2>Our Mission</h2>
+          <p class="qr-purpose">Support our ministry, outreach, worship, and community initiatives.</p>
+          <img class="qr-image" src="mission-qr.png" width="362" height="326" alt="UPI QR code for donations to the AAKHIKH mission">
+          <span class="qr-scan-note">Scan to support our mission</span>
+        </article>
+
+        <article class="qr-option">
+          <span class="qr-number" aria-hidden="true">02</span>
+          <h2>Our Land</h2>
+          <p class="qr-purpose">Help us secure land and build a lasting home for the church community.</p>
+          <img class="qr-image" src="land-qr.png" width="362" height="326" alt="UPI QR code for donations toward AAKHIKH land">
+          <span class="qr-scan-note">Scan to support our land</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">© 2026 AAKHIKH: The House of Blessings. All Rights Reserved.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

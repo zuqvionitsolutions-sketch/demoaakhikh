@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Worship with AAKHIKH online. Stay connected with our community on Instagram, Facebook, and YouTube wherever you are in the world.">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aakhikh.in/online" />
+
+  <!-- Favicon / AAKHIKH Logo Assets -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
+  <title>Join Online | AAKHIKH – The House of Blessings</title>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Join Online | AAKHIKH – The House of Blessings" />
+  <meta property="og:description" content="Worship with AAKHIKH online. Stay connected with our community on Instagram, Facebook, and YouTube wherever you are in the world." />
+  <meta property="og:image" content="https://aakhikh.in/logo.jpg" />
+  <meta property="og:url" content="https://aakhikh.in/online" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AAKHIKH" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Join Online | AAKHIKH – The House of Blessings" />
+  <meta name="twitter:description" content="Worship with AAKHIKH online. Stay connected with our community on Instagram, Facebook, and YouTube wherever you are in the world." />
+  <meta name="twitter:image" content="https://aakhikh.in/logo.jpg" />
+
+  <!-- Google Search Console Verification Placeholder -->
+  <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── ONLINE PAGE ──────────────────────────────────── */
+    .online-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 160px 8% 100px;
+      color: #fff;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .online-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(160deg, rgba(4,12,27,.97) 0%, rgba(4,12,27,.6) 50%, rgba(4,12,27,.9) 100%),
+        url('6.webp') center/cover no-repeat;
+      animation: oz 22s ease alternate infinite;
+    }
+
+    @keyframes oz { to { transform: scale(1.07); } }
+
+    .online-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(ellipse 70% 55% at 50% 80%, rgba(201,168,77,.2), transparent 65%);
+    }
+
+    .online-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background-image:
+        linear-gradient(rgba(201,168,77,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,77,.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+    }
+
+    .online-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+    }
+
+    .online-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,77,.15);
+      border: 1px solid rgba(201,168,77,.3);
+      color: #e8c97a;
+      font: 700 10px/1 var(--sans);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+
+    .online-live-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: #e8c97a;
+      animation: liveDot 1.4s ease infinite;
+    }
+
+    @keyframes liveDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .4; transform: scale(.7); }
+    }
+
+    .online-hero h1 {
+      font: 600 clamp(52px,7.5vw,100px)/.88 var(--serif);
+      letter-spacing: -3.5px;
+      margin: 0 0 24px;
+    }
+
+    .online-hero h1 em { color: #d4b76a; font-style: italic; font-weight: 500; }
+
+    .online-hero-sub {
+      color: rgba(255,255,255,.65);
+      font-size: clamp(15px,1.6vw,18px);
+      line-height: 1.75;
+      max-width: 480px;
+      margin: 0 auto 48px;
+    }
+
+    .online-buttons {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Platform cards */
+    .online-platforms {
+      padding: 90px 5%;
+      background: #f8f4ee;
+      text-align: center;
+    }
+
+    .online-platforms h2 {
+      font: 600 clamp(32px,4vw,54px)/1.05 var(--serif);
+      letter-spacing: -2px;
+      margin: 0 0 14px;
+    }
+
+    .online-platforms > p {
+      color: #68717a;
+      font-size: 15px;
+      margin: 0 auto 56px;
+      max-width: 400px;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      max-width: 1140px;
+      margin: 0 auto;
+      align-items: stretch;
+    }
+
+    .platform-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(8,22,41,.07), 0 18px 40px rgba(8,22,41,.05);
+      transition: transform .3s, box-shadow .3s;
+      text-decoration: none;
+      color: var(--ink);
+      border: 1px solid rgba(201,168,77,.1);
+    }
+
+    .platform-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 30px rgba(8,22,41,.1), 0 28px 55px rgba(8,22,41,.08);
+    }
+
+    .platform-card-head {
+      text-align: center;
+    }
+
+    .platform-preview {
+      display: block;
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+      background: #e6e0d5;
+      color: #fff;
+    }
+
+    .platform-preview::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8,20,37,.72), transparent 55%);
+      pointer-events: none;
+    }
+
+    .platform-preview img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform .45s ease;
+    }
+
+    .platform-card:hover .platform-preview img {
+      transform: scale(1.05);
+    }
+
+    .platform-badge {
+      position: absolute;
+      left: 16px;
+      bottom: 14px;
+      z-index: 1;
+      padding: 6px 10px;
+      border-radius: 100px;
+      background: rgba(8,22,41,.82);
+      color: #fff;
+      font: 700 9px/1 var(--sans);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .platform-preview-arrow {
+      position: absolute;
+      right: 16px;
+      bottom: 11px;
+      z-index: 1;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .platform-card-head h3 {
+      font: 500 22px var(--serif);
+      margin: 20px 24px 8px;
+    }
+
+    .platform-card-head p {
+      font-size: 13px;
+      color: #68717a;
+      line-height: 1.65;
+      margin: 0 24px 22px;
+    }
+
+    .platform-card-foot {
+      margin-top: auto;
+      padding: 16px 20px 20px;
+      text-align: center;
+      background: #fff;
+    }
+
+    .platform-card-foot a {
+      color: var(--gold);
+      font: 700 11px/1.4 var(--sans);
+      letter-spacing: .4px;
+    }
+
+    .platform-card-foot a:hover { color: #af803c; }
+
+    /* ── SCHEDULE ─────────────────────────────────────── */
+    .online-schedule {
+      background: var(--night);
+      padding: 90px 5%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .online-schedule::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 65% at 50% 110%, rgba(201,168,77,.18), transparent 60%);
+    }
+
+    .online-schedule-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+
+    .online-schedule h2 {
+      font: 600 clamp(36px,4.5vw,62px)/.95 var(--serif);
+      letter-spacing: -2.5px;
+      margin: 0 0 16px;
+      color: #fff;
+    }
+
+    .online-schedule h2 em { color: #d4b76a; font-style: italic; }
+
+    .online-schedule-time {
+      font: 500 clamp(22px,3vw,36px)/1.2 var(--serif);
+      color: var(--gold);
+      margin: 0 0 8px;
+    }
+
+    .online-schedule-day {
+      font: 700 11px var(--sans);
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+      margin: 0 0 36px;
+    }
+
+    @media (max-width: 640px) {
+      .online-hero { padding: 135px 6% 85px; min-height: auto; }
+      .platform-grid { grid-template-columns: 1fr; max-width: 380px; }
+      .online-platforms { padding: 70px 6%; }
+      .online-schedule { padding: 70px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header scrolled">
+    <a class="brand" href="index.html"><span>AAK</span>HIKH<small>The House of Blessings</small></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="messages.html">Messages</a>
+      <a href="events.html">Events</a>
+      <a href="locations.html">Locations</a>
+      <a href="donate.html">Donate</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="button button-small" href="online.html">Join Us Online</a></div>
+    <button class="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="close-menu" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="messages.html">Messages</a>
+    <a href="events.html">Events</a><a href="locations.html">Locations</a><a href="donate.html">Donate</a>
+    <a href="resources.html">Resources</a><a href="contact.html">Contact</a>
+    <a class="button" href="online.html">Join Us Online</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="online-hero">
+      <div class="online-hero-bg" aria-hidden="true"></div>
+      <div class="online-hero-inner">
+        <div class="online-live-badge"><div class="online-live-dot" aria-hidden="true"></div> Live Every Sunday</div>
+        <h1>Worship With Us<br><em>Online.</em></h1>
+        <p class="online-hero-sub">Stay connected wherever you are. Join our online worship community every Sunday and encounter God in real-time.</p>
+        <div class="online-buttons">
+          <a class="button" href="https://www.instagram.com/aakhikh_the_house_of_blessings/?hl=en" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+          <a class="button button-ghost" href="https://www.facebook.com/aakhikh/" target="_blank" rel="noopener noreferrer">Facebook ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATFORMS -->
+    <section class="online-platforms">
+      <p class="eyebrow">Watch us on</p>
+      <h2>Join from <em>anywhere.</em></h2>
+      <p>Multiple ways to worship with us wherever you are in the world.</p>
+      <div class="platform-grid">
+        <article class="platform-card">
+          <div class="platform-card-head">
+            <a class="platform-preview" href="https://www.instagram.com/aakhikh_the_house_of_blessings/?hl=en" target="_blank" rel="noopener noreferrer" aria-label="Open the latest AAKHIKH Instagram posts">
+              <img src="6.webp" alt="AAKHIKH worship moment from Instagram">
+              <span class="platform-badge">Instagram · Featured Post</span>
+              <span class="platform-preview-arrow" aria-hidden="true">↗</span>
+            </a>
+            <h3>Worship Moments</h3>
+            <p>Follow AAKHIKH on Instagram for worship moments, encouragement, and life in our community.</p>
+          </div>
+          <div class="platform-card-foot"><a href="https://www.instagram.com/aakhikh_the_house_of_blessings/?hl=en" target="_blank" rel="noopener noreferrer">View latest Instagram posts ↗</a></div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-card-head">
+            <a class="platform-preview" href="https://www.facebook.com/aakhikh/" target="_blank" rel="noopener noreferrer" aria-label="Open the latest AAKHIKH Facebook posts">
+              <img src="3.jpg" alt="AAKHIKH community gathering from Facebook">
+              <span class="platform-badge">Facebook · Featured Post</span>
+              <span class="platform-preview-arrow" aria-hidden="true">↗</span>
+            </a>
+            <h3>Community Updates</h3>
+            <p>See announcements, gatherings, and the latest updates from the AAKHIKH family.</p>
+          </div>
+          <div class="platform-card-foot"><a href="https://www.facebook.com/aakhikh/" target="_blank" rel="noopener noreferrer">View latest Facebook posts ↗</a></div>
+        </article>
+        <article class="platform-card">
+          <div class="platform-card-head">
+            <a class="platform-preview" href="https://www.youtube.com/watch?v=RDTfzhlVK2M" target="_blank" rel="noopener noreferrer" aria-label="Watch AAKHIKH's Journey on YouTube">
+              <img src="https://i.ytimg.com/vi/RDTfzhlVK2M/hqdefault.jpg" alt="AAKHIKH's Journey YouTube video thumbnail">
+              <span class="platform-badge">YouTube · Featured Video</span>
+              <span class="platform-preview-arrow" aria-hidden="true">▶</span>
+            </a>
+            <h3>AAKHIKH's Journey</h3>
+            <p>Watch a story of faith, grace, and transformation from AAKHIKH.</p>
+          </div>
+          <div class="platform-card-foot"><a href="https://www.youtube.com/@Aakhikh_The_House_of_Blessings/videos" target="_blank" rel="noopener noreferrer">View latest YouTube videos ↗</a></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section class="online-schedule">
+      <div class="online-schedule-inner">
+        <p class="eyebrow light">When to join</p>
+        <h2>Every Sunday<br><em>without fail.</em></h2>
+        <p class="online-schedule-time">11:00 AM – 4:00 PM</p>
+        <p class="online-schedule-day">IST · Every Sunday</p>
+        <a class="button" href="locations.html">Find us in person →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">© 2026 AAKHIKH: The House of Blessings. All Rights Reserved.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

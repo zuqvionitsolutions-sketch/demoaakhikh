@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Give to AAKHIKH – The House of Blessings. Your generosity helps us serve our community and spread the message of hope.">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aakhikh.in/giving" />
+
+  <!-- Favicon / AAKHIKH Logo Assets -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
+  <title>Giving | AAKHIKH – The House of Blessings</title>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Giving | AAKHIKH – The House of Blessings" />
+  <meta property="og:description" content="Give to AAKHIKH – The House of Blessings. Your generosity helps us serve our community and spread the message of hope." />
+  <meta property="og:image" content="https://aakhikh.in/logo.jpg" />
+  <meta property="og:url" content="https://aakhikh.in/giving" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AAKHIKH" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Giving | AAKHIKH – The House of Blessings" />
+  <meta name="twitter:description" content="Give to AAKHIKH – The House of Blessings. Your generosity helps us serve our community and spread the message of hope." />
+  <meta name="twitter:image" content="https://aakhikh.in/logo.jpg" />
+
+  <!-- Google Search Console Verification Placeholder -->
+  <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── GIVING HERO ──────────────────────────────────── */
+    .giving-hero {
+      position: relative;
+      min-height: 68vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 155px 9% 90px;
+      color: #fff;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .giving-hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(105deg, rgba(5,14,30,.97) 0%, rgba(5,14,30,.45) 58%, rgba(5,14,30,.8) 100%),
+        url('5.webp') center/cover no-repeat;
+      animation: gz 22s ease alternate infinite;
+    }
+
+    @keyframes gz { to { transform: scale(1.06); } }
+
+    .giving-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(ellipse 65% 55% at 75% 10%, rgba(201,168,77,.2), transparent 58%);
+    }
+
+    .giving-hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+    .giving-hero h1 {
+      font: 600 clamp(52px,7vw,96px)/.88 var(--serif);
+      letter-spacing: -3.5px;
+      margin: 0 0 24px;
+    }
+
+    .giving-hero h1 em { color: #d4b76a; font-style: italic; font-weight: 500; }
+
+    .giving-hero-sub {
+      color: rgba(255,255,255,.7);
+      font-size: clamp(15px,1.5vw,17px);
+      max-width: 500px;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* ── GIVING SECTION ───────────────────────────────── */
+    .giving-main {
+      padding: 110px 5%;
+      background: #f8f4ee;
+    }
+
+    .giving-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 8%;
+      align-items: start;
+    }
+
+    .giving-copy .eyebrow { margin-bottom: 14px; }
+
+    .giving-copy h2 {
+      font: 600 clamp(36px,4vw,58px)/1.05 var(--serif);
+      letter-spacing: -2px;
+      margin: 0 0 22px;
+    }
+
+    .giving-copy p {
+      color: #59616a;
+      font-size: 15px;
+      line-height: 1.8;
+      max-width: 530px;
+      margin-bottom: 24px;
+    }
+
+    .secure-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(201,168,77,.1);
+      border: 1px solid rgba(201,168,77,.3);
+      color: #8a6a20;
+      font: 700 11px var(--sans);
+      letter-spacing: 1px;
+      padding: 9px 16px;
+      border-radius: 100px;
+    }
+
+    /* Donation card */
+    .donation-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 44px 44px 40px;
+      box-shadow: 0 20px 60px rgba(8,22,41,.1), 0 4px 16px rgba(8,22,41,.06);
+      position: sticky;
+      top: 110px;
+    }
+
+    .give-toggle {
+      display: flex;
+      background: rgba(8,22,41,.06);
+      border-radius: 100px;
+      padding: 4px;
+      gap: 4px;
+      margin-bottom: 32px;
+    }
+
+    .give-toggle button {
+      flex: 1;
+      padding: 10px;
+      font: 700 11px var(--sans);
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 100px;
+      background: transparent;
+      color: rgba(10,26,46,.45);
+      cursor: pointer;
+      transition: all .25s ease;
+    }
+
+    .give-toggle button.active {
+      background: var(--night);
+      color: var(--gold);
+      box-shadow: 0 4px 16px rgba(8,22,41,.25);
+    }
+
+    .donation-label {
+      font: 700 10px var(--sans);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8892a2;
+      margin-bottom: 14px;
+    }
+
+    .amounts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .amounts button {
+      padding: 13px 8px;
+      font: 700 14px var(--sans);
+      color: var(--ink);
+      background: #f8f4ee;
+      border: 2px solid transparent;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+
+    .amounts button:hover { border-color: var(--gold); background: rgba(201,168,77,.08); }
+
+    .amounts button.active {
+      background: var(--gold);
+      color: #fff;
+      border-color: var(--gold);
+      box-shadow: 0 4px 18px rgba(201,168,77,.3);
+    }
+
+    .amount-input {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 2px solid #e0d9cf;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      transition: border-color .2s;
+    }
+
+    .amount-input:focus-within { border-color: var(--gold); }
+
+    .amount-input label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font: 700 22px var(--serif);
+      padding: 0 16px;
+      background: rgba(201,168,77,.08);
+      height: 52px;
+      flex-shrink: 0;
+    }
+
+    .amount-input input {
+      border: none;
+      flex: 1;
+      padding: 14px 16px;
+      font: 400 15px var(--sans);
+      background: transparent;
+      color: var(--ink);
+      outline: none;
+      width: 100%;
+    }
+
+    .donate-button {
+      width: 100%;
+      padding: 18px;
+      font: 700 14px/1 var(--sans);
+      letter-spacing: .5px;
+      background: var(--gold);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background .25s, transform .25s, box-shadow .25s;
+      margin-bottom: 16px;
+    }
+
+    .donate-button:hover {
+      background: #af803c;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(201,168,77,.35);
+    }
+
+    .payment-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .payment-links a {
+      font: 700 12px var(--sans);
+      color: #8892a2;
+      transition: color .2s;
+    }
+
+    .payment-links a:hover { color: var(--gold); }
+
+    .legal {
+      font-size: 11px;
+      color: #a0a9b4;
+      text-align: center;
+      margin: 0 0 16px;
+    }
+
+    /* ── WHY GIVE STRIP ───────────────────────────────── */
+    .giving-why {
+      background: var(--night);
+      padding: 80px 5%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      border-top: 2px solid rgba(201,168,77,.25);
+    }
+
+    .giving-why-item {
+      padding: 44px 48px;
+      border-right: 1px solid rgba(255,255,255,.07);
+      position: relative;
+    }
+
+    .giving-why-item:last-child { border-right: none; }
+
+    .giving-why-icon {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: rgba(201,168,77,.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    .giving-why-item h3 {
+      font: 500 22px var(--serif);
+      color: #fff;
+      margin: 0 0 10px;
+    }
+
+    .giving-why-item p {
+      font-size: 14px;
+      color: rgba(255,255,255,.5);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 960px) {
+      .giving-inner { grid-template-columns: 1fr; gap: 50px; }
+      .donation-card { position: static; }
+      .giving-why { grid-template-columns: 1fr; }
+      .giving-why-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.07); padding: 36px 40px; }
+    }
+
+    @media (max-width: 640px) {
+      .giving-hero { padding: 130px 6% 75px; }
+      .giving-main { padding: 75px 6%; }
+      .donation-card { padding: 32px 26px; }
+      .amounts { grid-template-columns: repeat(2, 1fr); }
+      .giving-why { padding: 60px 6%; }
+      .giving-why-item { padding: 30px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header scrolled">
+    <a class="brand" href="index.html"><span>AAK</span>HIKH<small>The House of Blessings</small></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="messages.html">Messages</a>
+      <a href="events.html">Events</a>
+      <a href="locations.html">Locations</a>
+      <a href="giving.html">Giving</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="button button-small" href="online.html">Join Us Online</a></div>
+    <button class="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="close-menu" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="messages.html">Messages</a>
+    <a href="events.html">Events</a><a href="locations.html">Locations</a><a href="giving.html">Giving</a>
+    <a href="resources.html">Resources</a><a href="contact.html">Contact</a>
+    <a class="button" href="online.html">Join Us Online</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="giving-hero">
+      <div class="giving-hero-bg" aria-hidden="true"></div>
+      <div class="giving-hero-content">
+        <p class="eyebrow light">Giving</p>
+        <h1>Give &amp; Be Part<br>of <em>His Work.</em></h1>
+        <p class="giving-hero-sub">Your generosity helps us serve our community and create a welcoming home where lives can be transformed.</p>
+      </div>
+    </section>
+
+    <!-- GIVING FORM -->
+    <section class="giving-main">
+      <div class="giving-inner">
+        <div class="giving-copy">
+          <p class="eyebrow">Thank you</p>
+          <h2>Your generosity<br>makes a <em>difference.</em></h2>
+          <p>Every gift, big or small, helps us extend the love of Jesus to those in need. Your support funds our ministries, feeds families, and keeps our doors open for all who seek worship and community.</p>
+          <div class="secure-badge">✓ Simple, secure giving</div>
+        </div>
+
+        <div class="donation-card">
+          <div class="give-toggle" role="group" aria-label="Giving frequency">
+            <button class="active" id="give-once">One-Time</button>
+            <button id="give-monthly">Monthly</button>
+          </div>
+          <p class="donation-label">Choose an amount</p>
+          <div class="amounts">
+            <button>₹500</button>
+            <button>₹1,000</button>
+            <button>₹2,500</button>
+            <button>₹5,000</button>
+            <button>₹10,000</button>
+            <button class="active">Custom</button>
+          </div>
+          <div class="amount-input">
+            <label for="donation-amount">₹</label>
+            <input type="number" id="donation-amount" placeholder="Enter custom amount" aria-label="Donation amount">
+          </div>
+          <button class="donate-button" type="button">Donate Now →</button>
+          <p class="legal">All donations are subject to applicable laws and regulations.</p>
+          <div class="payment-links">
+            <a href="contact.html">UPI Donation ↗</a>
+            <a href="contact.html">Bank Transfer ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY GIVE -->
+    <section class="giving-why" aria-label="Why give to AAKHIKH">
+      <div class="giving-why-item">
+        <div class="giving-why-icon" aria-hidden="true">🙏</div>
+        <h3>Fund Ministry</h3>
+        <p>Every gift helps us run powerful worship services and community programs that change lives.</p>
+      </div>
+      <div class="giving-why-item">
+        <div class="giving-why-icon" aria-hidden="true">🤝</div>
+        <h3>Serve Others</h3>
+        <p>Your generosity enables us to reach out with compassion to families and individuals in need.</p>
+      </div>
+      <div class="giving-why-item">
+        <div class="giving-why-icon" aria-hidden="true">✦</div>
+        <h3>Spread the Word</h3>
+        <p>Help us carry the message of hope, grace, and love to more hearts across the region.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">© 2026 AAKHIKH: The House of Blessings. All Rights Reserved.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

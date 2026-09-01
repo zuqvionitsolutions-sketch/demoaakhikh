@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Get in touch with AAKHIKH – The House of Blessings. We'd love to hear from you. Contact us by email, phone, or through our form.">
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://aakhikh.in/contact" />
+
+  <!-- Favicon / AAKHIKH Logo Assets -->
+  <link rel="icon" type="image/jpeg" href="logo.jpg" />
+  <link rel="apple-touch-icon" href="logo.jpg" />
+
+  <title>Contact | AAKHIKH – The House of Blessings</title>
+
+  <!-- Open Graph Metadata -->
+  <meta property="og:title" content="Contact | AAKHIKH – The House of Blessings" />
+  <meta property="og:description" content="Get in touch with AAKHIKH – The House of Blessings. We'd love to hear from you. Contact us by email, phone, or through our form." />
+  <meta property="og:image" content="https://aakhikh.in/logo.jpg" />
+  <meta property="og:url" content="https://aakhikh.in/contact" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AAKHIKH" />
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact | AAKHIKH – The House of Blessings" />
+  <meta name="twitter:description" content="Get in touch with AAKHIKH – The House of Blessings. We'd love to hear from you. Contact us by email, phone, or through our form." />
+  <meta name="twitter:image" content="https://aakhikh.in/logo.jpg" />
+
+  <!-- Google Search Console Verification Placeholder -->
+  <!-- <meta name="google-site-verification" content="YOUR_GOOGLE_SEARCH_CONSOLE_VERIFICATION_CODE" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* ── CONTACT HERO ─────────────────────────────────── */
+    .contact-hero {
+      position: relative;
+      min-height: 52vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 160px 8% 90px;
+      color: #fff;
+      overflow: hidden;
+      isolation: isolate;
+      background: var(--night);
+    }
+
+    .contact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 110%, rgba(201,168,77,.2), transparent 60%),
+        radial-gradient(circle 500px at 15% -10%, rgba(201,168,77,.08), transparent);
+    }
+
+    /* Grid overlay */
+    .contact-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background-image:
+        linear-gradient(rgba(201,168,77,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,77,.05) 1px, transparent 1px);
+      background-size: 55px 55px;
+      mask-image: radial-gradient(ellipse 75% 75% at 50% 50%, black 20%, transparent 100%);
+    }
+
+    .contact-hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+    }
+
+    .contact-hero h1 {
+      font: 600 clamp(48px,6.5vw,88px)/.92 var(--serif);
+      letter-spacing: -3px;
+      margin: 0 0 20px;
+    }
+
+    .contact-hero h1 em { color: #d4b76a; font-style: italic; font-weight: 500; }
+
+    .contact-hero-sub {
+      color: rgba(255,255,255,.65);
+      font-size: clamp(15px,1.5vw,17px);
+      line-height: 1.75;
+      margin: 0;
+      max-width: 460px;
+    }
+
+    /* ── CONTACT SECTION ──────────────────────────────── */
+    .contact-body {
+      padding: 90px 5% 110px;
+      background: #f8f4ee;
+    }
+
+    .contact-panel {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 0;
+      max-width: 1100px;
+      margin: 0 auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 40px 90px rgba(8,22,41,.14), 0 10px 30px rgba(8,22,41,.08);
+    }
+
+    /* Dark sidebar */
+    .contact-details {
+      padding: 60px 52px;
+      background: var(--night);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-details::before {
+      content: '';
+      position: absolute;
+      bottom: -100px; right: -100px;
+      width: 280px; height: 280px;
+      border: 1px solid rgba(201,168,77,.12);
+      border-radius: 50%;
+    }
+
+    .contact-details::after {
+      content: '';
+      position: absolute;
+      bottom: -150px; right: -150px;
+      width: 380px; height: 380px;
+      border: 1px solid rgba(201,168,77,.06);
+      border-radius: 50%;
+    }
+
+    .contact-details .eyebrow.light { margin-bottom: 14px; }
+
+    .contact-details h2 {
+      font: 600 clamp(30px,3vw,46px)/1.05 var(--serif);
+      letter-spacing: -1.5px;
+      margin: 0 0 24px;
+      color: #fff;
+    }
+
+    .contact-details h2 em { color: #d4b76a; font-style: italic; }
+
+    .contact-details > p {
+      color: rgba(255,255,255,.55);
+      font-size: 14px;
+      line-height: 1.75;
+      margin: 0 0 36px;
+      max-width: 280px;
+    }
+
+    .contact-methods { border-top: 1px solid rgba(255,255,255,.1); }
+
+    .contact-method {
+      display: block;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,.1);
+      text-decoration: none;
+      transition: padding-left .2s;
+    }
+
+    .contact-method:hover { padding-left: 6px; }
+
+    .contact-method span {
+      display: block;
+      color: var(--gold);
+      font: 700 9px var(--sans);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .contact-method strong {
+      font: 500 16px/1.3 var(--serif);
+      color: #fff;
+      word-break: break-all;
+    }
+
+    .contact-location-tag {
+      color: rgba(255,255,255,.35);
+      font-size: 13px;
+      line-height: 1.8;
+      margin: 28px 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Form side */
+    .contact-form-wrap {
+      padding: 60px 56px;
+      background: #fff;
+    }
+
+    .contact-form-wrap .eyebrow { margin-bottom: 10px; }
+
+    .contact-form-wrap h3 {
+      font: 500 clamp(28px,2.5vw,40px)/1.1 var(--serif);
+      margin: 0 0 10px;
+    }
+
+    .contact-form-wrap > p {
+      color: #707780;
+      font-size: 13px;
+      margin: 0 0 32px;
+    }
+
+    .contact-form label {
+      display: grid;
+      gap: 7px;
+      font: 700 11px var(--sans);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #8892a2;
+      margin-bottom: 22px;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form select {
+      color: var(--ink);
+      border: none;
+      border-bottom: 2px solid #e0d9cf;
+      padding: 11px 0;
+      font: 400 15px var(--sans);
+      background: transparent;
+      transition: border-color .2s;
+      width: 100%;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus,
+    .contact-form select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+
+    .contact-form select {
+      appearance: none;
+      cursor: pointer;
+      background: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns="http://www.w3.org/2000/svg" width="12" height="12"%3E%3Cpath fill="%2377808b" d="M6 8L1 3h10z"/%3E%3C/svg%3E') right 4px center/10px no-repeat;
+    }
+
+    .input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+
+    .contact-form .button { margin-top: 8px; }
+
+    .form-message { min-height: 20px; font-size: 13px; margin: 14px 0 0; }
+
+    /* ── VISIT SECTION ────────────────────────────────── */
+    .visit-section {
+      padding: 110px 5%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8%;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .visit-copy h2 {
+      font: 600 clamp(34px,4vw,56px)/1.05 var(--serif);
+      letter-spacing: -2px;
+      margin: 0 0 18px;
+    }
+
+    .visit-copy > p {
+      color: #606a74;
+      max-width: 420px;
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0 0 28px;
+    }
+
+    .visit-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      min-height: 360px;
+      padding: 36px 42px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 16px;
+      background:
+        linear-gradient(160deg, rgba(5,15,28,.08) 20%, rgba(5,15,28,.92)),
+        url('1 (1.webp') center/cover;
+      text-decoration: none;
+      box-shadow: 0 30px 70px rgba(8,22,41,.15);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .visit-card:hover { transform: translateY(-6px); box-shadow: 0 40px 80px rgba(8,22,41,.22); }
+
+    .visit-card > * { position: relative; z-index: 1; }
+
+    .visit-card-tag {
+      font: 700 10px var(--sans);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .visit-card h3 {
+      font: 500 36px var(--serif);
+      color: #fff;
+      margin: 4px 0 10px;
+    }
+
+    .visit-card span {
+      color: rgba(255,255,255,.55);
+      font-size: 13px;
+    }
+
+    /* ── RESPONSIVE ───────────────────────────────────── */
+    @media (max-width: 960px) {
+      .contact-panel { grid-template-columns: 1fr; }
+      .contact-details { padding: 50px 44px; }
+      .contact-form-wrap { padding: 50px 44px; }
+      .visit-section { grid-template-columns: 1fr; padding: 80px 6%; gap: 50px; }
+    }
+
+    @media (max-width: 640px) {
+      .contact-hero { padding: 135px 6% 75px; }
+      .contact-body { padding: 60px 5% 80px; }
+      .contact-details, .contact-form-wrap { padding: 40px 28px; }
+      .input-row { grid-template-columns: 1fr; gap: 0; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header scrolled">
+    <a class="brand" href="index.html"><span>AAK</span>HIKH<small>The House of Blessings</small></a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="messages.html">Messages</a>
+      <a href="events.html">Events</a>
+      <a href="locations.html">Locations</a>
+      <a href="donate.html">Donate</a>
+      <a href="resources.html">Resources</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions"><a class="button button-small" href="online.html">Join Us Online</a></div>
+    <button class="menu-button" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+  </header>
+  <div class="mobile-menu" aria-hidden="true">
+    <button class="close-menu" aria-label="Close menu">&times;</button>
+    <a href="index.html">Home</a><a href="about.html">About Us</a><a href="messages.html">Messages</a>
+    <a href="events.html">Events</a><a href="locations.html">Locations</a><a href="donate.html">Donate</a>
+    <a href="resources.html">Resources</a><a href="contact.html">Contact</a>
+    <a class="button" href="online.html">Join Us Online</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="contact-hero">
+      <div class="contact-hero-inner">
+        <p class="eyebrow light">Let's connect</p>
+        <h1>We'd Love to<br><em>Hear From You.</em></h1>
+        <p class="contact-hero-sub">Every question, prayer request, and conversation matters to us.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="contact-body">
+      <div class="contact-panel">
+        <aside class="contact-details">
+          <p class="eyebrow light">Contact details</p>
+          <h2>Let's start a<br><em>conversation.</em></h2>
+          <p>Whether you are visiting for the first time or looking for a place to belong, our team would love to hear from you.</p>
+          <div class="contact-methods">
+            <a class="contact-method" href="mailto:blessingsaakhikh@gmail.com">
+              <span>Email us</span>
+              <strong>blessingsaakhikh@gmail.com</strong>
+            </a>
+            <a class="contact-method" href="tel:+913613255253">
+              <span>Call us</span>
+              <strong>0361-3255253</strong>
+            </a>
+          </div>
+          <p class="contact-location-tag">
+            AAKHIKH: The House of Blessings<br>
+            Guwahati, Assam &amp; Shillong, Meghalaya
+          </p>
+        </aside>
+
+        <div class="contact-form-wrap">
+          <p class="eyebrow">Send a message</p>
+          <h3>How can we help?</h3>
+          <p>Complete the form and we will be in touch soon.</p>
+          <form class="contact-form" novalidate>
+            <div class="input-row">
+              <label>Name<input required type="text" placeholder="Your name"></label>
+              <label>Email<input required type="email" placeholder="you@email.com"></label>
+            </div>
+            <div class="input-row">
+              <label>Phone<input type="tel" placeholder="Your phone"></label>
+              <label>Location
+                <select>
+                  <option>Guwahati</option>
+                  <option>Shillong</option>
+                </select>
+              </label>
+            </div>
+            <label>Message<textarea required rows="4" placeholder="How can we help?"></textarea></label>
+            <button class="button" type="submit">Send Message <b>→</b></button>
+            <p class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- VISIT SECTION -->
+    <section class="visit-section" aria-label="Visit us">
+      <div class="visit-copy">
+        <p class="eyebrow">Come visit</p>
+        <h2>There's always<br><em>a seat for you.</em></h2>
+        <p>Join us in person for worship, community, and encouragement. We would be glad to welcome you.</p>
+        <a class="text-link" href="locations.html">Find a location <b>→</b></a>
+      </div>
+      <a class="visit-card" href="locations.html" aria-label="Visit AAKHIKH Guwahati campus">
+        <p class="visit-card-tag">AAKHIKH Worship Center</p>
+        <h3>Guwahati, Assam</h3>
+        <span>Get directions and service information →</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="copyright">© 2026 AAKHIKH: The House of Blessings. All Rights Reserved.</div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
