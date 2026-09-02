@@ -1,6 +1,6 @@
 const header=document.querySelector('.site-header');
 document.querySelectorAll('.brand').forEach(brand=>{if(!brand.querySelector('img')){const logo=document.createElement('img');logo.src='logo.jpg';logo.alt='AAKHIKH logo';logo.className='site-logo';brand.prepend(logo);brand.classList.add('brand-with-logo')}});
-const primaryLinks=[['index.html','Home'],['about.html','About Us'],['team.html','Our Team'],['messages.html','Messages'],['events.html','Events'],['locations.html','Locations'],['donate.html','Donate'],['resources.html','Resources'],['contact.html','Contact']];
+const primaryLinks=[['index.html','Home'],['about.html','About Us'],['team.html','Our Team'],['messages.html','Messages'],['events.html','Events'],['locations.html','Locations'],['donate.html','Give'],['resources.html','Resources'],['contact.html','Contact']];
 const currentPage=location.pathname.split('/').pop()||'index.html';
 const navigationMarkup=primaryLinks.map(([href,label])=>`<a href="${href}"${href===currentPage?' class="active" aria-current="page"':''}>${label}</a>`).join('');
 document.querySelectorAll('.desktop-nav').forEach(nav=>nav.innerHTML=navigationMarkup);
