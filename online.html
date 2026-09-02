@@ -285,7 +285,7 @@
       background: radial-gradient(ellipse 60% 65% at 50% 110%, rgba(201,168,77,.18), transparent 60%);
     }
 
-    .online-schedule-inner { position: relative; z-index: 1; max-width: 520px; margin: 0 auto; }
+    .online-schedule-inner { position: relative; z-index: 1; max-width: 920px; margin: 0 auto; }
 
     .online-schedule h2 {
       font: 600 clamp(36px,4.5vw,62px)/.95 var(--serif);
@@ -310,11 +310,38 @@
       margin: 0 0 36px;
     }
 
+    .online-schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin: 36px 0;
+      text-align: left;
+    }
+
+    .online-schedule-card {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.035);
+    }
+
+    .online-schedule-card h3 {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font: 600 25px/1.2 var(--serif);
+    }
+
+    .online-schedule-card p {
+      margin: 0;
+      color: rgba(255,255,255,.78);
+      font: 500 15px/1.85 var(--sans);
+    }
+
     @media (max-width: 640px) {
       .online-hero { padding: 135px 6% 85px; min-height: auto; }
       .platform-grid { grid-template-columns: 1fr; max-width: 380px; }
       .online-platforms { padding: 70px 6%; }
       .online-schedule { padding: 70px 6%; }
+      .online-schedule-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -407,9 +434,18 @@
     <section class="online-schedule">
       <div class="online-schedule-inner">
         <p class="eyebrow light">When to join</p>
-        <h2>Every Sunday<br><em>without fail.</em></h2>
-        <p class="online-schedule-time">9:00 AM · Assamese<br>12:00 PM · English</p>
-        <p class="online-schedule-day">IST · Every Sunday</p>
+        <h2>Join us throughout<br><em>the week.</em></h2>
+        <div class="online-schedule-grid">
+          <article class="online-schedule-card">
+            <h3>Guwahati</h3>
+            <p>Sunday Assamese Service · 9:00 AM<br>Sunday English Service · 12:00 PM<br>Rhema Bible Study · 1st &amp; 3rd Thursday, 7:00 PM<br>Care Groups · 2nd &amp; 4th Thursday, 7:00 PM<br>Prayer &amp; Fasting · Saturday, 9:00 AM</p>
+          </article>
+          <article class="online-schedule-card">
+            <h3>Shillong</h3>
+            <p>Sunday English Service · 12:00 PM<br>At His Table Bible Study · Thursday, 6:00 PM<br>Prayer &amp; Fasting · Saturday, 9:00 AM</p>
+          </article>
+        </div>
+        <p class="online-schedule-day">All times are IST</p>
         <a class="button" href="locations.html">Find us in person →</a>
       </div>
     </section>
