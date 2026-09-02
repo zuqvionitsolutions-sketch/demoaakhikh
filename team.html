@@ -159,6 +159,59 @@
         text-transform: uppercase;
         color: #a87931;
       }
+      .bio-button {
+        margin-top: 17px;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: #0c1f3a;
+        font: 700 12px var(--sans);
+        cursor: pointer;
+      }
+      .bio-button span { color: #a87931; margin-left: 5px; }
+      .bio-button:hover, .bio-button:focus-visible { color: #a87931; }
+      .bio-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        display: none;
+        place-items: center;
+        padding: 24px;
+        background: rgba(4, 13, 27, 0.78);
+        backdrop-filter: blur(9px);
+      }
+      .bio-modal.is-open { display: grid; }
+      .bio-dialog {
+        position: relative;
+        width: min(720px, 100%);
+        max-height: min(720px, calc(100vh - 48px));
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border-radius: 22px;
+        background: #fffdf9;
+        box-shadow: 0 35px 90px rgba(0, 0, 0, 0.36);
+      }
+      .bio-dialog-copy { padding: clamp(38px, 6vw, 70px); overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; }
+      .bio-dialog-copy h2 { margin: 9px 0 8px; color: #0c1f3a; font: 600 clamp(35px, 4vw, 53px)/1.02 var(--serif); letter-spacing: -1.7px; }
+      .bio-role { margin: 0 0 27px; color: #a87931; font: 700 11px var(--sans); letter-spacing: 1.8px; text-transform: uppercase; }
+      .bio-text { margin: 0; color: #59636e; font-size: 16px; line-height: 1.85; white-space: pre-line; }
+      .bio-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 2;
+        width: 43px;
+        height: 43px;
+        border: 1px solid rgba(12, 31, 58, 0.13);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.92);
+        color: #0c1f3a;
+        font-size: 27px;
+        line-height: 1;
+        cursor: pointer;
+      }
+      body.bio-open { overflow: hidden; }
       /* Visit invitation */
       .team-cta {
         padding: 78px 9%;
@@ -260,6 +313,11 @@
           right: 14px;
           top: 17px;
         }
+        .bio-modal { padding: 14px; }
+        .bio-dialog { width: 100%; max-height: calc(100dvh - 28px); border-radius: 18px; }
+        .bio-dialog-copy { padding: 54px 25px 34px; overflow-y: auto; }
+        .bio-dialog-copy h2 { font-size: clamp(32px, 10vw, 43px); }
+        .bio-role { padding-right: 38px; line-height: 1.55; }
       }
       @media (max-width: 440px) {
         .team-section {
@@ -402,6 +460,17 @@
         <a class="button" href="locations.html">Find a Location</a>
       </section>
     </main>
+    <div class="bio-modal" id="bio-modal" aria-hidden="true">
+      <section class="bio-dialog" role="dialog" aria-modal="true" aria-labelledby="bio-name" aria-describedby="bio-description">
+        <button class="bio-close" type="button" aria-label="Close biography">&times;</button>
+        <div class="bio-dialog-copy">
+          <p class="eyebrow">Meet our team</p>
+          <h2 id="bio-name"></h2>
+          <p class="bio-role" id="bio-role"></p>
+          <p class="bio-text" id="bio-description"></p>
+        </div>
+      </section>
+    </div>
     <!-- Site footer -->
     <footer>
       <div class="copyright">
@@ -438,34 +507,96 @@
         );
       const teamGrid = document.querySelector(".team-grid");
       // Map short card labels to each leader's full display name and role.
+      // BIO SETTINGS: Replace each placeholder below when a biography is ready.
       const leaderDetails = [
-        ["Rev. Sonia Bhattacharya", "Rev. Sonia Bhattacharya", "Pastor"],
-        ["Monica Bhattacharya", "Pastor Monica Bhattacharya", "Pastor"],
-        ["Pastor Nayan", "Pastor Nayanjyoti Baruah", "Pastor"],
-        ["Wanshai", "Elder Wanshai Jyrwa", "Elder"],
-        ["Elder Rasmi", "Elder Rasmi Sarma", "Elder"],
-        ["Sanju Borah", "Elder Sanju Borah", "Elder"],
-        ["Arpana Basumatary", "Deacon Arpana Basumatary", "Deacon"],
-        ["Deacon Jo", "Deacon Dr. Joseph Gowala", "Deacon"],
-        ["Deacon Kriti", "Deacon Kriti Jinnia Sona", "Deacon"],
+        ["Rev. Sonia Bhattacharya", "Rev. Sonia Bhattacharya", "Senior Pastor, Aakhikh : The House of Blessings", `Rev. Sonia Bhattacharya is a dynamic leader who embodies the heart of God. As the Lead Founding Pastor of Aakhikh: The House of Blessings, she carries a deep passion for spreading hope, love, and redemption through Jesus Christ. A first-generation believer with a rich Holy Spirit heritage, her life is a testimony of God’s miracle-working power, inspiring generations through faith, perseverance, and the goodness of God.
+
+Together with her husband, Dr. Nabarun Dhar, Rev. Sonia pioneered the vision of Aakhikh and laid its foundation with a shared passion to see lives transformed by the Gospel. Today, she continues to lead the church with a heart to build a Christ-centered community marked by unity, growth, and strength in Christ. Dr. Nabarun continues to serve alongside her, leading the church in worship and helping create an atmosphere where people can encounter God.
+
+A Master’s holder in Mass Media and Journalism, Rev. Sonia has a strong passion for media evangelism. With her team alongside, she has been instrumental in taking the Gospel far and wide through media, reaching lives beyond the walls of the church.`],
+        ["Monica Bhattacharya", "Monica Bhattacharya", "Pastor-in-Charge, Aakhikh Shillong Campus", `Pastor Monica Bhattacharya serves as the Pastor-in-Charge of Aakhikh’s Shillong Campus. A passionate servant of God and gifted preacher, she carries a deep heart for people and a strong calling to evangelism, with a desire to see lives transformed through the power of God’s Word.
+
+Together with her husband, Elder Wanshai, she is committed to nurturing believers and building a strong, Christ-centered community, where people can grow in faith and discover their purpose in God. With a PhD in English, she also brings a rich academic perspective to her life and ministry. Her love for God’s Word, people, and communication reflects her desire to make the Gospel known and see lives impacted for Christ.`],
+        ["Pastor Nayan", "Nayanjyoti Baruah", "Associate Pastor, Aakhikh : The House of Blessings", `Pastor Nayanjyoti Baruah serves as an Associate Pastor at Aakhikh: The House of Blessings, with a heart for shepherding people and helping them grow in their relationship with Christ. A gifted teacher of God’s Word, he is passionate about communicating Scripture with clarity and helping believers apply its truth to their everyday lives. Through pastoral care, counselling, prayer, and personal discipleship, he is committed to walking alongside people and seeing their lives strengthened and transformed in Christ.He also leads the church’s Intercessory Prayer Team, fostering a growing passion for intercession and calling believers to pray beyond themselves—for lives, nations, and the advancement of God’s Kingdom.
+
+Beyond his pastoral ministry, Pastor Nayan serves as the Head Chef of Aakhikh Cafeteria – Simkha Kitchen, where his love for food becomes another expression of his heart to serve and care for people. Whether through the Word, prayer, or the simple act of preparing a meal, his life reflects a genuine desire to bless others and make the love of Christ tangible.`],
+        ["Wanshai", "Wanshai Jyrwa", "Elder, Aakhikh Shillong Campus", `Elder Wanshai is a dedicated servant of God with a heart for building people and creating spaces where lives can encounter God. He co-leads the Aakhikh Shillong Campus alongside his wife, Pastor Monica Bhattacharya. He oversees its operations and plays a key role in construction and technical initiatives, helping cultivate an environment conducive to prayer, worship, and spiritual growth.
+
+With a deep passion for discipleship, Elder Wanshai intentionally invests in the lives of others, walking alongside them and helping them grow in their relationship with Christ. His own journey of transformation stands as a testimony to the redeeming power of God and fuels his desire to see others experience the same grace and freedom.`],
+        ["Elder Rasmi", "Rasmi Sarma", "Elder & Administrative Head, Aakhikh : The House of Blessings", `Evangelist Elder Rasmi Sharma is a passionate servant of God with a deep heart for the Kingdom and a strong calling to evangelism. Called to the office of Evangelism within the five-fold ministry, she is passionate about reaching people with the Gospel and seeing lives transformed through Christ.
+
+With a strong commitment to prayer and intercession, Elder Rasmi has been instrumental in cultivating a culture of prayer and encouraging believers to seek God wholeheartedly. She also serves as the Administrative Head of the church, bringing wisdom, diligence, and excellence to the practical aspects of ministry. Her life reflects a deep commitment to serving God and His people, both within the church and beyond its walls.`],
+        ["Sanju Borah", "Sanju Borah", "Elder, Aakhikh : The House of Blessings", `Elder Sanju Borah is a dedicated servant of God with a heart for people and a commitment to excellence in ministry. Serving as the Secretary of the church, he plays an integral role in overseeing the church’s operations and coordinating various ministries and activities with wisdom, diligence, and precision.
+
+Beyond his responsibilities within the church, Elder Sanju leads Faith Foundation, a rehabilitation ministry in Guwahati dedicated to helping individuals overcome addiction and rebuild their lives. Through compassionate guidance, prayer, and the hope found in Christ, he is passionate about seeing lives restored, renewed, and transformed by the grace of God.`],
+        ["Arpana Basumatary", "Arpana Basumatary", "Deacon, Aakhikh : The House of Blessings", `Deacon Arpana Basumatary is a vibrant and compassionate servant of God with a deep heart for people and a strong commitment to the Ministry of Helps. She serves with humility and kindness, faithfully caring for the needs of the church family and community and demonstrating the love of Christ through her service.
+
+A passionate intercessor, Deacon Arpana carries a deep commitment to prayer and standing in the gap for others. Her prayerful spirit and selfless service reflect her love for God and her desire to see lives strengthened, transformed, and drawn closer to Christ.`],
+        ["Deacon Jo", "Dr. Joseph Gowala", "Deacon, Aakhikh : The House of Blessings", `Dr. Joseph Gowala serves as a Deacon at Aakhikh: The House of Blessings and as the Assistant Head of the church’s Intercessory Prayer Team, serving alongside Pastor Nayanjyoti Baruah. He carries a father’s heart for the body of Christ, with a deep desire to see people strengthened, guided, and established in their faith. Known for his wisdom and calm composure, Deacon Joseph brings a steady presence even in the midst of challenging and chaotic situations, responding with grace, discernment, and excellence.
+
+A medical professional pursuing his Postgraduate studies in Pharmacology at Gauhati Medical College and Hospital (GMCH), Deacon Joseph brings the same heart to care for people in his profession as he does in ministry. Whether through serving in the medical field, leading in prayer, or investing in the lives of believers, he is committed to serving with wisdom, compassion, and excellence, reflecting Christ in every sphere of his life.`],
+        ["Deacon Kriti", "Kriti Jinnia Sona", "Deacon, Aakhikh : The House of Blessings", `Kriti Jinnia Sona serves as a Deacon at Aakhikh: The House of Blessings, with a heart for caring for people and walking alongside the church family. Through counselling, prayer, and personal encouragement, she seeks to help people navigate different seasons of life and grow stronger in their relationship with Christ. Her quiet commitment to serving others reflects a genuine desire to see people strengthened, cared for, and rooted in the love of God.
+
+Alongside her ministerial responsibilities, Kriti serves as the Administrative Assistant, working closely with Elder Rashmi Sharma, the Administrative Head, and assisting with the official and administrative responsibilities of the church. With a Master’s in Computer Applications, she also serves through her skills in technology and helps with the church’s digital and media-related work as needed. In every sphere, she seeks to serve with diligence, humility, and joy, with a heart committed to God and His people.`],
       ];
       const leaderCards = [];
       // Update each matching card and retain the required display order.
-      leaderDetails.forEach(([match, name, role]) => {
+      leaderDetails.forEach(([match, name, role, bio]) => {
         const card = [...teamGrid.querySelectorAll(".team-card")].find((item) =>
           item.textContent.includes(match),
         );
         if (card) {
           card.querySelector("h3").textContent = name;
           card.querySelector(".team-card-body p").textContent = role;
+          card.dataset.bio = bio;
+          card.querySelector(".team-card-body").insertAdjacentHTML(
+            "beforeend",
+            '<button class="bio-button" type="button">View Bio <span aria-hidden="true">&rarr;</span></button>',
+          );
           leaderCards.push(card);
         }
       });
       if (teamGrid) teamGrid.append(...leaderCards);
 
       // Replace the introductory heading after the cards are ready.
-       const teamHeading = document.querySelector(".team-intro h2");
+      const teamHeading = document.querySelector(".team-intro h2");
       if (teamHeading) teamHeading.innerHTML = "Leaders of <em>AAKHIKH</em>";
+
+      // Reuse one accessible popup for every team member.
+      const bioModal = document.querySelector("#bio-modal");
+      const bioClose = bioModal.querySelector(".bio-close");
+      let lastBioButton = null;
+
+      function closeBio() {
+        bioModal.classList.remove("is-open");
+        bioModal.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("bio-open");
+        lastBioButton?.focus();
+      }
+
+      teamGrid?.addEventListener("click", (event) => {
+        const button = event.target.closest(".bio-button");
+        if (!button) return;
+        const card = button.closest(".team-card");
+        const name = card.querySelector("h3").textContent;
+
+        lastBioButton = button;
+        bioModal.querySelector("#bio-name").textContent = name;
+        bioModal.querySelector("#bio-role").textContent = card.querySelector(".team-card-body > p").textContent;
+        bioModal.querySelector("#bio-description").textContent = card.dataset.bio;
+        bioModal.classList.add("is-open");
+        bioModal.setAttribute("aria-hidden", "false");
+        document.body.classList.add("bio-open");
+        bioClose.focus();
+      });
+
+      bioClose.addEventListener("click", closeBio);
+      bioModal.addEventListener("click", (event) => {
+        if (event.target === bioModal) closeBio();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && bioModal.classList.contains("is-open")) closeBio();
+      });
     </script>
   </body>
 </html>
