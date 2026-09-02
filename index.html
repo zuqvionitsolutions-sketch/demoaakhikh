@@ -39,9 +39,18 @@
     .brand-with-logo img{position:absolute;left:0;top:50%;transform:translateY(-57%);width:37px;height:37px;object-fit:contain;border-radius:50%}
     html,body{height:auto;overflow-y:auto;overflow-x:hidden}
     .hero{height:100svh;min-height:0}
-    .hero-image{background-image:linear-gradient(90deg,rgba(4,14,29,.83),rgba(4,14,29,.48) 53%,rgba(4,14,29,.65)),url('https://images.unsplash.com/photo-1519491050282-cf00c82424b4?auto=format&fit=crop&w=2100&q=85')}
-    main>section:not(.hero):not(.leadership-section){display:none}
+    .hero-image{background-image:linear-gradient(90deg,rgba(4,14,29,.83),rgba(4,14,29,.48) 53%,rgba(4,14,29,.65)),url('bg.JPEG')}
+    main>section:not(.hero):not(.welcome):not(.leadership-section){display:none}
     .scroll-cue{display:block}
+    .welcome{display:grid;grid-template-columns:minmax(320px,.9fr) minmax(360px,1.1fr);align-items:center;gap:clamp(50px,8vw,120px);min-height:720px;padding:100px 9%;overflow:hidden;background:#f7f1e7}
+    .welcome-photo{position:relative;display:flex;align-items:center;justify-content:center}
+    .welcome-photo:before{display:none}
+    .welcome-photo img{display:block;width:min(100%,540px);aspect-ratio:4/5;object-fit:cover;object-position:center bottom;border-radius:270px 270px 24px 24px;box-shadow:0 32px 65px rgba(8,20,37,.18);border:1px solid rgba(201,168,77,.28)}
+    .welcome-copy{position:relative;z-index:1;max-width:610px}
+    .welcome-copy h2{font:600 clamp(42px,5vw,68px)/1.03 var(--serif);letter-spacing:-2.5px;margin:12px 0 26px;color:var(--ink)}
+    .welcome-copy h2 em{color:var(--gold);font-weight:500}
+    .welcome-copy>p:not(.eyebrow){font-size:clamp(16px,1.25vw,19px);line-height:1.85;color:#56616d;margin:0 0 28px}
+    .welcome-copy .signature{padding-left:20px;border-left:3px solid var(--gold);font-family:var(--serif);font-size:19px;font-style:italic;color:var(--ink)}
     @media(max-height:900px) and (min-width:601px){
       .hero-content{margin-top:65px}
       .hero h1{font-size:clamp(52px,7vw,94px)}
@@ -53,6 +62,11 @@
       .hero-content{margin-top:52px}
       .hero h1{font-size:clamp(48px,16vw,72px)}
       .hero-copy{font-size:13px}
+      .welcome{grid-template-columns:1fr;gap:42px;min-height:0;padding:70px 6% 60px}
+      .welcome-photo{order:2}
+      .welcome-photo img{width:min(100%,430px);max-height:none;border-radius:220px 220px 20px 20px}
+      .welcome-copy{order:1}
+      .welcome-copy h2{font-size:clamp(38px,12vw,52px);letter-spacing:-1.5px}
     }
 
     /* Leadership section styling */
@@ -197,7 +211,7 @@
       <a class="scroll-cue" href="#welcome"><span></span>SCROLL TO EXPLORE</a>
     </section>
 
-    <section class="welcome section" id="welcome"><div class="welcome-photo image-panel"><div class="image-caption">“Come as you are.”</div></div><div class="welcome-copy"><p class="eyebrow">A note from our pastors</p><h2>You're Welcome to<br><em>Worship With Us</em></h2><p>As Pastors of Aakhikh: The House of Blessings, this is an auspicious moment to share with you God's mandate upon our hearts. We believe that you are created for glory. That is why He has ordained us at this very hour and time to reach you and welcome you into the fold.</p><div class="signature"><strong>Rev. Sonia Bhattacharya</strong><span>&amp; Pastor Nabarun Dhar</span></div><a href="#about" class="text-link">More About Us <b>→</b></a></div></section>
+    <section class="welcome section" id="welcome"><div class="welcome-photo"><img src="welcome-founders.png" alt="Rev. Sonia Bhattacharya and Pastor Nabarun Dhar" loading="lazy"></div><div class="welcome-copy"><p class="eyebrow">A note from our pastors</p><h2>You're Welcome to<br><em>Worship With Us</em></h2><p>As Pastors of Aakhikh: The House of Blessings, this is an auspicious moment to share with you God's mandate upon our hearts. We believe that you are created for glory. That is why He has ordained us at this very hour and time to reach you and welcome you into the fold.</p><div class="signature">— Rev. Sonia Bhattacharya &amp; Pastor Nabarun Dhar</div></div></section>
 
     <section class="about section" id="about"><div class="section-intro centered"><p class="eyebrow">Who we are</p><h2>A Home for Every <em>Prodigal</em></h2><p>AAKHIKH is a community of Jesus-lovers: a welcoming spiritual home where you can encounter His love, grow in His Word, and find people to walk with.</p></div><div class="feature-grid"><article><div class="icon">✦</div><h3>Faith</h3><p>Growing together in faith, in grace, and in the transforming truth of the Word.</p></article><article><div class="icon">◌</div><h3>Community</h3><p>Building meaningful relationships and carrying one another through every season.</p></article><article><div class="icon">⌁</div><h3>Purpose</h3><p>Living out God's purpose and sharing His compassionate love with the world.</p></article></div></section>
 
