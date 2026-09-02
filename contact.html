@@ -405,16 +405,16 @@
           <p class="eyebrow">Send a message</p>
           <h3>How can we help?</h3>
           <p>Complete the form and we will be in touch soon.</p>
-          <form class="contact-form" novalidate>
+          <form class="contact-form" data-whatsapp="919707743764" novalidate>
             <div class="input-row">
-              <label>Name<input required type="text" placeholder="Your name"></label>
-              <label>Email<input required type="email" placeholder="you@email.com"></label>
+              <label>Name<input required name="name" type="text" placeholder="Your name"></label>
+              <label>Email<input required name="email" type="email" placeholder="you@email.com"></label>
             </div>
             <div class="input-row">
-              <label>Phone<input type="tel" placeholder="Your phone"></label>
-              <label>Location<input type="text" placeholder="Enter your location"></label>
+              <label>Phone<input name="phone" type="tel" placeholder="Your phone"></label>
+              <label>Location<input name="location" type="text" placeholder="Enter your location"></label>
             </div>
-            <label>Message<textarea required rows="4" placeholder="How can we help?"></textarea></label>
+            <label>Message<textarea required name="message" rows="4" placeholder="How can we help?"></textarea></label>
             <button class="button" type="submit">Send Message <b>→</b></button>
             <p class="form-message" aria-live="polite"></p>
           </form>
