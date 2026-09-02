@@ -162,6 +162,19 @@
 
     .about-story-copy p:last-of-type { margin-bottom: 28px; }
 
+    .belief-statement {
+      padding: 95px 9%;
+      display: grid;
+      grid-template-columns: minmax(220px, .55fr) minmax(420px, 1.45fr);
+      gap: clamp(45px, 8vw, 120px);
+      align-items: start;
+      background: #081425;
+      color: #fff;
+    }
+    .belief-statement h2 { margin: 0; font: 600 clamp(42px,5vw,68px)/1 var(--serif); letter-spacing: -2px; }
+    .belief-statement h2 em { display: block; color: #dfbc74; font-weight: 500; }
+       .belief-statement p { max-width: 820px; margin: 0; color: #c0c8d1; font-size: clamp(16px,1.35vw,19px); line-height: 1.9; }
+
     /* ── BELIEFS ──────────────────────────────────────── */
     .beliefs {
       padding: 120px 9%;
@@ -197,7 +210,7 @@
     }
 
     .beliefs-heading h2 {
-      font: 600 clamp(36px,4.2vw,60px)/1.05 var(--serif);
+      font: 600 clamp(36px,4.2vw,60px)/1.24 var(--serif);
       letter-spacing: -2px;
       margin: 0 0 16px;
     }
@@ -417,8 +430,9 @@
       .about-story, .pastor-note { grid-template-columns: 1fr; padding: 90px 7%; gap: 50px; }
       .about-story-photo { height: 400px; }
       .about-story-photo::after { display: none; }
-      .belief-grid { grid-template-columns: 1fr 1fr; }
+          .belief-grid { grid-template-columns: 1fr 1fr; }
       .beliefs { padding: 90px 7%; }
+      .belief-statement { padding: 80px 7%; grid-template-columns: 1fr; gap: 30px; }
       .pastor-portraits { height: 430px; max-width: 600px; }
       .social-community-inner { grid-template-columns: 1fr; gap: 38px; }
       .about-gallery { padding: 85px 7%; }
@@ -431,6 +445,7 @@
       .hero-scroll { display: none; }
       .beliefs { padding: 70px 6%; }
       .belief-grid { grid-template-columns: 1fr; }
+      .belief-statement { padding: 65px 6%; }
       .belief { padding: 32px 26px; }
       .social-community { padding: 70px 6%; }
       .social-link { padding: 17px; gap: 14px; }
@@ -495,7 +510,6 @@
       <a href="#our-story">Our Story</a>
       <a href="#vision-purpose">Vision &amp; Purpose</a>
       <a href="#our-beliefs">Our Beliefs</a>
-      <a href="#our-pastors">Our Pastors</a>
     </nav>
 
     <!-- STORY -->
@@ -534,12 +548,16 @@
       <aside><p class="eyebrow light">Core values</p><div><b>Love</b><b>Relationship</b><b>Responsibility</b><b>Integrity</b></div></aside>
     </section>
 
-    <!-- BELIEFS -->
-    <section class="beliefs" id="our-beliefs">
+    <!-- OUR BELIEFS STATEMENT -->
+    <section class="belief-statement" id="our-beliefs">
+      <h2>Our <em>Beliefs</em></h2>
+      <p>Aakhikh - The House of Blessings, stands as a non-denominational, independent yet God-dependent, Bible-based, and Spirit-filled church. We believe in the Triune God—God the Father, God the Son, and God the Holy Spirit—and in the redemptive power of the Cross, which grants us our identity and authority in Christ. The Word of God is our sole infallible authority, and our blessed hope lies in the visible, glorious return of Jesus Christ to reign with His Bride.</p>
+    </section>
+
+    <!-- BELIEF FOUNDATIONS -->
+    <section class="beliefs">
       <div class="beliefs-heading">
-        <p class="eyebrow">What guides us</p>
         <h2>Rooted in love.<br><em>Living with purpose.</em></h2>
-        <p>We are an independent, non-denominational, Bible-based, and Spirit-filled church.</p>
       </div>
       <div class="belief-grid">
         <article class="belief"><span class="belief-number">01</span><h3>God's Word: Our Foundation</h3><p>We believe the Bible is God's inspired Word, revealing His love for humanity (John 3:16, 2 Timothy 3:15–17).</p></article>
@@ -571,25 +589,6 @@
     </section>
 
     <!-- PASTOR NOTE -->
-    <section class="pastor-note" id="our-pastors">
-      <div class="pastor-portraits" aria-label="AAKHIKH pastors">
-        <div class="pastor-portrait" role="img" aria-label="Rev. Sonia Bhattacharya"></div>
-        <div class="pastor-portrait" role="img" aria-label="Pastor Nabarun Dhar"></div>
-      </div>
-      <div class="pastor-note-copy">
-        <p class="eyebrow light">A note from our pastors</p>
-        <h2>There is a place<br>for you <em>here.</em></h2>
-        <p class="pastor-note-text">We are grateful to welcome you into a family where you can encounter God's love, find people to walk with, and discover all that He has placed within you. Whether you are searching, returning, or growing — there is a seat with your name on it.</p>
-        <div class="pastor-signature">
-          <div>
-            <p class="pastor-sig-name">Rev. Sonia Bhattacharya &amp; Pastor Nabarun Dhar</p>
-            <p class="pastor-sig-role">Pastors, AAKHIKH: The House of Blessings</p>
-          </div>
-          <div class="pastor-sig-line" aria-hidden="true"></div>
-        </div>
-      </div>
-    </section>
-
     <section class="visit-cta">
       <p class="eyebrow light">Your place is waiting</p>
       <h2>Come and experience<br><em>home.</em></h2>
