@@ -186,6 +186,16 @@
       word-break: break-all;
     }
 
+    .contact-phone-numbers {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      white-space: nowrap;
+    }
+
+    .contact-phone-numbers a { color: inherit; }
+    .contact-phone-numbers i { font-style: normal; }
+
     .contact-location-tag {
       color: rgba(255,255,255,.35);
       font-size: 13px;
@@ -385,14 +395,10 @@
               <span>Email us</span>
               <strong>blessingsaakhikh@gmail.com</strong>
             </a>
-            <a class="contact-method" href="tel:+913613255253">
+            <div class="contact-method">
               <span>Call us</span>
-              <strong>0361-3255253</strong>
-            </a>
-            <a class="contact-method" href="tel:+919707743764">
-              <span>Call us</span>
-              <strong>9707743764</strong>
-            </a>
+              <strong class="contact-phone-numbers"><a href="tel:+913613255253">0361-3255253</a><i aria-hidden="true">|</i><a href="tel:+919707743764">9707743764</a></strong>
+            </div>
           </div>
           <p class="contact-location-tag">
             AAKHIKH: The House of Blessings<br>
