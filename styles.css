@@ -612,6 +612,14 @@ footer a:hover {
   color: var(--gold);
 }
 
+.footer-links .contact-numbers {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  white-space: nowrap;
+  color: #818d9d;
+}
+
 .brand footer {
   color: #fff;
   font-size: 20px;
