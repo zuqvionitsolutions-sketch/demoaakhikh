@@ -130,6 +130,8 @@
       box-shadow: 0 8px 30px rgba(8,22,41,.12), 0 30px 60px rgba(8,22,41,.1);
     }
 
+    .event-card.new-event-card { order: -1; }
+
     .event-card-top {
       padding: 28px 28px 24px;
       background: linear-gradient(135deg, #1e3457, #0c1f3a);
@@ -145,6 +147,13 @@
       border-radius: 50%;
       background: rgba(201,168,77,.1);
     }
+
+    .event-card-top.has-logo { height: 168px; min-height: 0; padding: 0; display: block; }
+    .event-card-top.has-logo::before { content: ''; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to bottom,rgba(5,15,28,.18),rgba(5,15,28,.08) 50%,rgba(5,15,28,.82)); }
+    .event-card-top.has-logo::after { display: none; }
+    .event-card-logo { position: absolute; inset: 0; display: block; width: 100%; height: 100%; margin: 0; object-fit: cover; border-radius: 0; box-shadow: none; }
+    .event-card-top.has-logo .event-badge { position: absolute; z-index: 2; top: 20px; left: 22px; margin: 0; background: rgba(8,20,37,.78); backdrop-filter: blur(8px); }
+    .event-card-top.has-logo .event-card-date { position: absolute; z-index: 2; left: 22px; bottom: 18px; font: 700 17px var(--sans); letter-spacing: .5px; color: #fff; text-shadow: 0 2px 8px rgba(0,0,0,.5); }
 
     .event-badge {
       display: inline-flex;
@@ -190,6 +199,10 @@
       line-height: 1.7;
       margin: 0;
     }
+
+    .event-register { display: inline-flex; align-items: center; justify-content: center; gap: 9px; margin-top: 20px; padding: 12px 19px; border-radius: 8px; background: var(--gold); color: #081425; font-size: 12px; font-weight: 700; text-decoration: none; transition: transform .25s ease, background .25s ease; }
+    .event-register:hover { transform: translateY(-2px); background: #dfbc74; }
+    .event-register:focus-visible { outline: 3px solid rgba(201,168,77,.4); outline-offset: 3px; }
 
     /* WEEKLY SERVICE SCHEDULE */
     .service-schedule {
@@ -478,15 +491,17 @@
             <p>Assamese Service at 9:00 AM and English Service at 12:00 PM. Join us for worship, the Word, and community.</p>
           </div>
         </article>
-        <article class="event-card">
-          <div class="event-card-top">
-            <div class="event-badge">Announcing</div>
-            <div class="event-card-date">TBA</div>
+        <article class="event-card new-event-card">
+          <div class="event-card-top has-logo">
+            <div class="event-badge">New Event</div>
+            <img class="event-card-logo" src="e1.jpeg" alt="EZER Awakening 2.0 event logo">
+            <div class="event-card-date">6 November</div>
           </div>
           <div class="event-card-body">
             <p class="meta">AAKHIKH Worship Center · Guwahati</p>
-            <h3>Summer Worship Retreat</h3>
-            <p>A weekend of deeper worship, prayer, and meaningful community.</p>
+            <h3>EZER Awakening 2.0</h3>
+            <p>Join us for a special gathering of worship, awakening, and fellowship.</p>
+            <a class="event-register" href="https://forms.gle/Vgmgac61gbX3tMxZ9" target="_blank" rel="noopener noreferrer">Register Now <span aria-hidden="true">↗</span></a>
           </div>
         </article>
       </div>
