@@ -56,7 +56,7 @@
       z-index: -2;
       background:
         linear-gradient(100deg, rgba(5,14,30,.97) 0%, rgba(5,14,30,.5) 55%, rgba(5,14,30,.75) 100%),
-        url('1 (1.webp') center/cover no-repeat;
+        url('ab1.jpeg') center/cover no-repeat;
       animation: slowZoom 20s ease alternate infinite;
     }
 
@@ -161,6 +161,63 @@
     .about-story-copy h2 + p::first-letter { float: left; margin: 7px 9px 0 0; color: #a87931; font: 600 55px/.75 var(--serif); }
 
     .about-story-copy p:last-of-type { margin-bottom: 28px; }
+
+    /* Refined history feature */
+    .about-story { padding: clamp(48px,5vw,72px) 9% clamp(70px,7vw,100px); grid-template-columns: minmax(0,1fr); gap: 48px; align-items: start; overflow: hidden; background: linear-gradient(135deg,#faf7f2 0%,var(--paper) 55%,#f4ede3 100%); }
+    .about-story::before { content: 'OUR STORY'; top: 2%; white-space: nowrap; }
+    .about-story-visual { position: relative; top: auto; width: 100%; max-width: 1240px; margin: 0 auto; }
+    .about-story-photo { height: clamp(460px,62vw,680px); border-radius: 28px 28px 110px 28px; box-shadow: 0 34px 80px rgba(5,15,28,.2); outline-color: rgba(255,255,255,.62); outline-offset: -12px; }
+    .about-story-photo::before { content: 'EST. 2024'; left: 28px; top: 28px; padding: 11px 17px; font-size: 10px; }
+    .about-story-photo::after { content: ''; inset: 0; right: 0; bottom: 0; padding: 0; border-radius: 0; background: linear-gradient(to top,rgba(5,15,28,.58),transparent 42%); box-shadow: none; }
+    .about-story-caption { position: relative; z-index: 2; width: calc(100% - 42px); margin: -86px 21px 0; padding: 24px 26px; box-sizing: border-box; border: 1px solid rgba(255,255,255,.18); border-radius: 16px 16px 50px 16px; background: rgba(8,20,37,.92); backdrop-filter: blur(12px); color: #fff; box-shadow: 0 18px 38px rgba(5,15,28,.2); }
+    .about-story-caption strong { display: block; margin-bottom: 6px; color: #f1d696; font: italic 500 22px var(--serif); }
+    .about-story-caption span { color: #aeb8c4; font-size: 12px; line-height: 1.55; letter-spacing: .3px; }
+    .about-story-copy { position: relative; z-index: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding-top: 10px; }
+    .about-story-copy .eyebrow { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
+    .about-story-copy .eyebrow::before { content: ''; width: 44px; height: 1px; background: var(--gold); }
+    .about-story-copy h2 { margin-bottom: 32px; color: #081425; font-size: clamp(40px,4.2vw,62px); line-height: 1.03; }
+    .about-story-copy h2 em { color: #b8862f; font-weight: 500; }
+    .about-story-copy p { max-width: 650px; margin: 0; padding: 20px 0; border-top: 1px solid rgba(8,20,37,.1); color: #505b67; font-size: clamp(15px,1.05vw,17px); line-height: 1.85; }
+    .about-story-copy h2 + p { padding-top: 0; border-top: 0; color: #34404e; font-size: clamp(16px,1.15vw,18px); }
+    .about-story-copy h2 + p::first-letter { margin: 8px 10px 0 0; font-size: 58px; line-height: .72; }
+    .about-story-text { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 0 clamp(36px,6vw,90px); max-width: none; }
+    .about-story-copy .about-story-text p { padding: 20px 0; }
+    .about-story-copy .about-story-text p:nth-child(-n+2) { padding-top: 0; border-top: 0; }
+    .about-story-copy .about-story-text p:first-child { color: #34404e; font-size: clamp(16px,1.08vw,18px); }
+    .about-story-copy .about-story-text p:first-child::first-letter { float: left; margin: 8px 10px 0 0; color: #a87931; font: 600 58px/.72 var(--serif); }
+    .about-story-copy .text-link { display: inline-flex; align-items: center; gap: 12px; padding: 14px 20px; border-radius: 100px; background: #081425; color: #fff; }
+    .about-story-copy .text-link:hover { background: #b8862f; color: #fff; }
+
+    /* Text-only history timeline */
+    .about-story-copy { text-align: center; }
+    .about-story-copy .eyebrow { justify-content: center; }
+    .about-story-copy .eyebrow::after { content: ''; width: 44px; height: 1px; background: var(--gold); }
+    .about-story-copy h2 { max-width: 790px; margin: 0 auto 52px; font-size: clamp(44px,5vw,72px); }
+    .about-story-text { counter-reset: history-step; gap: 24px; text-align: left; }
+    .about-story-copy .about-story-text p,
+    .about-story-copy .about-story-text p:nth-child(-n+2),
+    .about-story-copy .about-story-text p:nth-child(2) {
+      position: relative;
+      min-height: 100%;
+      margin: 0;
+      padding: 72px 34px 34px;
+      box-sizing: border-box;
+      border: 1px solid rgba(8,20,37,.1);
+      border-radius: 22px;
+      background: rgba(255,255,255,.68);
+      box-shadow: 0 16px 45px rgba(8,20,37,.06);
+      color: #505b67;
+      font-size: clamp(15px,1.05vw,17px);
+      line-height: 1.82;
+      transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+      counter-increment: history-step;
+    }
+    .about-story-copy .about-story-text p::before { content: '0' counter(history-step); position: absolute; left: 34px; top: 27px; color: #b8862f; font: 700 12px var(--sans); letter-spacing: 2px; }
+    .about-story-copy .about-story-text p::after { content: ''; position: absolute; left: 72px; right: 34px; top: 34px; height: 1px; background: linear-gradient(90deg,rgba(184,134,47,.55),transparent); }
+    .about-story-copy .about-story-text p:hover { transform: translateY(-4px); border-color: rgba(184,134,47,.3); box-shadow: 0 22px 55px rgba(8,20,37,.1); }
+    .about-story-copy .about-story-text p:first-child { color: #505b67; font-size: clamp(15px,1.05vw,17px); }
+    .about-story-copy .about-story-text p:first-child::first-letter { float: none; margin: 0; color: inherit; font: inherit; }
+    .about-story-copy .text-link { margin-top: 38px; }
 
     /* ── BELIEFS ──────────────────────────────────────── */
     .beliefs {
@@ -357,7 +414,7 @@
     .about-gallery-header { text-align: center; max-width: 590px; margin: 0 auto 45px; }
     .about-gallery-header h2 { font: 600 clamp(36px,4vw,56px)/1.05 var(--serif); letter-spacing: -2px; margin: 0; }
     .about-gallery-header h2 em { color: #a87931; font-style: italic; font-weight: 500; }
-    .about-gallery-grid { display: grid; grid-template-columns: 1.25fr .9fr .9fr; grid-template-rows: 260px 260px; gap: 18px; max-width: 1200px; margin: 0 auto; }
+    .about-gallery-grid { display: grid; grid-template-columns: 1.25fr .9fr .9fr; grid-template-rows: repeat(3, 260px); gap: 18px; max-width: 1200px; margin: 0 auto; }
     .about-gallery-item { display: block; position: relative; overflow: hidden; border-radius: 15px; background: #081425 center/cover; text-decoration: none; transition: transform .3s ease, box-shadow .3s ease; }
     .about-gallery-item:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 16px 34px rgba(8,20,37,.16); }
     .about-gallery-item:focus-visible { outline: 3px solid #c9a84d; outline-offset: 4px; }
@@ -370,10 +427,14 @@
     .about-gallery-item:after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(8,20,37,.48), transparent 55%); }
     .about-gallery-item::before { content: '+'; position: absolute; right: 18px; top: 18px; z-index: 2; width: 36px; height: 36px; display: grid; place-items: center; border: 1px solid rgba(255,255,255,.45); border-radius: 50%; background: rgba(8,20,37,.28); backdrop-filter: blur(8px); color: #fff; font-size: 20px; opacity: 0; transform: scale(.7); transition: .3s ease; }
     .about-gallery-item:hover::before { opacity: 1; transform: scale(1); }
-    .about-gallery-item:nth-child(1) { grid-row: span 2; background-image: url('5.webp'); }
-    .about-gallery-item:nth-child(2) { background-image: url('6.webp'); }
-    .about-gallery-item:nth-child(3) { background-image: url('7.jpg'); }
-    .about-gallery-item:nth-child(4) { background-image: url('2.webp'); }
+    .about-gallery-item:nth-child(1) { grid-row: span 2; background-image: url('a7.jpeg'); }
+    .about-gallery-item:nth-child(2) { background-image: url('a8.jpeg'); }
+    .about-gallery-item:nth-child(3) { background-image: url('a9.JPEG'); }
+    .about-gallery-item:nth-child(4) { background-image: url('a10.JPEG'); }
+    .about-gallery-item:nth-child(5) { background-image: url('5.webp'); }
+    .about-gallery-item:nth-child(6) { background-image: url('6.webp'); }
+    .about-gallery-item:nth-child(7) { background-image: url('7.jpg'); }
+    .about-gallery-item:nth-child(8) { background-image: url('2.webp'); }
     .about-gallery-item span { position: absolute; left: 19px; bottom: 17px; z-index: 1; color: #fff; font: 700 10px var(--sans); letter-spacing: 1.6px; text-transform: uppercase; }
 
     /* STAY CONNECTED */
@@ -426,8 +487,10 @@
     /* ── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 960px) {
       .about-story, .pastor-note { grid-template-columns: 1fr; padding: 90px 7%; gap: 50px; }
-      .about-story-photo { height: 400px; }
-      .about-story-photo::after { display: none; }
+      .about-story-visual { position: relative; top: auto; width: 100%; max-width: 720px; margin: 0 auto; }
+      .about-story-photo { height: 500px; }
+      .about-story-text { grid-template-columns: 1fr; max-width: none; }
+      .about-story-copy .about-story-text p:nth-child(2) { padding-top: 20px; border-top: 1px solid rgba(8,20,37,.1); }
           .belief-grid { grid-template-columns: 1fr 1fr; }
       .beliefs { padding: 90px 7%; }
       .pastor-portraits { height: 430px; max-width: 600px; }
@@ -449,7 +512,7 @@
       .social-community { padding: 70px 6%; }
       .social-link { padding: 17px; gap: 14px; }
       .about-gallery { padding: 70px 6%; }
-      .about-gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px 180px 180px; gap: 12px; }
+      .about-gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 240px; grid-auto-rows: 180px; gap: 12px; }
       .about-gallery-item:nth-child(1) { grid-column: span 2; grid-row: auto; }
       .about-jumpnav { justify-content: flex-start; overflow-x: auto; padding: 13px 18px; scrollbar-width: none; }
       .about-jumpnav::-webkit-scrollbar { display: none; }
@@ -457,6 +520,15 @@
       .about-story::before { display: none; }
       .about-story-copy h2 { font-size: clamp(36px, 11vw, 48px); line-height: 1.02; letter-spacing: -1.5px; }
       .about-story-copy .eyebrow { margin-bottom: 18px; }
+      .about-story-photo { height: 390px; border-radius: 22px 22px 70px 22px; }
+      .about-story-caption { width: calc(100% - 24px); margin: -68px 12px 0; padding: 20px; }
+      .about-story { padding-top: 42px; gap: 36px; }
+      .about-story-copy h2 { margin-bottom: 38px; }
+      .about-story-copy .about-story-text p,
+      .about-story-copy .about-story-text p:nth-child(-n+2),
+      .about-story-copy .about-story-text p:nth-child(2) { padding: 66px 24px 28px; }
+      .about-story-copy .about-story-text p::before { left: 24px; }
+      .about-story-copy .about-story-text p::after { left: 62px; right: 24px; }
       .vision-band { grid-template-columns: 1fr; }
       .vision-band article { padding: 65px 6%; }
       .vision-band article:first-child { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.1); }
@@ -513,14 +585,15 @@
 
     <!-- STORY -->
     <section class="about-story" id="our-story">
-      <div class="about-story-photo" role="img" aria-label="People connecting at church"></div>
       <div class="about-story-copy">
         <p class="eyebrow">Our history</p>
         <h2>From a living room<br>to a <em>living church.</em></h2>
-        <p>Born from humble beginnings as a home fellowship of a few college students, young adults, and elderly individuals, Aakhikh was established with a shared desire to seek God and build a community rooted in faith. What started as small gatherings marked by heartfelt prayers, worship, and fellowship gradually grew in number and spirit. This growth culminated in the official launch of Aakhikh's first service on March 29, 2024, marking the beginning of its journey as a vibrant church community committed to serving God and people.</p>
-        <p>In a year, Aakhikh has evolved into a beacon of light for Christians in the North-Eastern region of India and beyond. Its unwavering message of faith, love, and hope has resonated deeply with individuals seeking spiritual nourishment and a stronger connection with God. Through sermons, worship services, and outreach initiatives, the church has remained dedicated to uplifting the community and fostering an environment where people feel welcomed, valued, and inspired to grow in their faith.</p>
-        <p>At the heart of Aakhikh lies a steadfast commitment to devotion, service, and community. The church's foundation is built on the principles of serving others selflessly, cultivating meaningful relationships, and nurturing spiritual growth among its members. By emphasizing both individual and collective responsibility, Aakhikh encourages believers to live out their faith in practical ways, reaching out to those in need and embodying Christ's love in their daily lives.</p>
-        <p>Inspiring generations one blessing at a time, Aakhikh continues to be a cornerstone for believers, guiding them through life's challenges and joys. The church's influence extends beyond Sunday services, fostering a culture of continuous learning, compassion, and unity. As it grows, Aakhikh remains dedicated to its mission of spreading hope, strengthening faith, and building a loving community centered on God's grace and purpose.</p>
+        <div class="about-story-text">
+          <p>Born from humble beginnings as a home fellowship of a few college students, young adults, and elderly individuals, Aakhikh was established with a shared desire to seek God and build a community rooted in faith. What started as small gatherings marked by heartfelt prayers, worship, and fellowship gradually grew in number and spirit. This growth culminated in the official launch of Aakhikh's first service on March 29, 2024, marking the beginning of its journey as a vibrant church community committed to serving God and people.</p>
+          <p>In a year, Aakhikh has evolved into a beacon of light for Christians in the North-Eastern region of India and beyond. Its unwavering message of faith, love, and hope has resonated deeply with individuals seeking spiritual nourishment and a stronger connection with God. Through sermons, worship services, and outreach initiatives, the church has remained dedicated to uplifting the community and fostering an environment where people feel welcomed, valued, and inspired to grow in their faith.</p>
+          <p>At the heart of Aakhikh lies a steadfast commitment to devotion, service, and community. The church's foundation is built on the principles of serving others selflessly, cultivating meaningful relationships, and nurturing spiritual growth among its members. By emphasizing both individual and collective responsibility, Aakhikh encourages believers to live out their faith in practical ways, reaching out to those in need and embodying Christ's love in their daily lives.</p>
+          <p>Inspiring generations one blessing at a time, Aakhikh continues to be a cornerstone for believers, guiding them through life's challenges and joys. The church's influence extends beyond Sunday services, fostering a culture of continuous learning, compassion, and unity. As it grows, Aakhikh remains dedicated to its mission of spreading hope, strengthening faith, and building a loving community centered on God's grace and purpose.</p>
+        </div>
         <a class="text-link" href="contact.html">Connect with us <b>→</b></a>
       </div>
     </section>
@@ -529,10 +602,14 @@
     <section class="about-gallery" aria-labelledby="gallery-title">
       <div class="about-gallery-header"><p class="eyebrow">Life at AAKHIKH</p><h2 id="gallery-title">Faith in <em>every moment.</em></h2></div>
       <div class="about-gallery-grid">
-        <a class="about-gallery-item" href="5.webp" data-gallery-image="5.webp" data-gallery-alt="Worship together" aria-label="Enlarge Worship together photo"><span>Worship together</span></a>
-        <a class="about-gallery-item" href="6.webp" data-gallery-image="6.webp" data-gallery-alt="Growing in faith" aria-label="Enlarge Growing in faith photo"><span>Growing in faith</span></a>
-        <a class="about-gallery-item" href="7.jpg" data-gallery-image="7.jpg" data-gallery-alt="One family" aria-label="Enlarge One family photo"><span>One family</span></a>
-        <a class="about-gallery-item" href="2.webp" data-gallery-image="2.webp" data-gallery-alt="Welcome home" aria-label="Enlarge Welcome home photo"><span>Welcome home</span></a>
+        <a class="about-gallery-item" href="a7.jpeg" data-gallery-image="a7.jpeg" data-gallery-alt="Worship together" aria-label="Enlarge Worship together photo"><span>Worship together</span></a>
+        <a class="about-gallery-item" href="a8.jpeg" data-gallery-image="a8.jpeg" data-gallery-alt="Growing in faith" aria-label="Enlarge Growing in faith photo"><span>Growing in faith</span></a>
+        <a class="about-gallery-item" href="a9.JPEG" data-gallery-image="a9.JPEG" data-gallery-alt="One family" aria-label="Enlarge One family photo"><span>One family</span></a>
+        <a class="about-gallery-item" href="a10.JPEG" data-gallery-image="a10.JPEG" data-gallery-alt="Welcome home" aria-label="Enlarge Welcome home photo"><span>Welcome home</span></a>
+        <a class="about-gallery-item" href="5.webp" data-gallery-image="5.webp" data-gallery-alt="Worship service" aria-label="Enlarge Worship service photo"><span>Worship service</span></a>
+        <a class="about-gallery-item" href="6.webp" data-gallery-image="6.webp" data-gallery-alt="Church gathering" aria-label="Enlarge Church gathering photo"><span>Church gathering</span></a>
+        <a class="about-gallery-item" href="7.jpg" data-gallery-image="7.jpg" data-gallery-alt="Learning together" aria-label="Enlarge Learning together photo"><span>Learning together</span></a>
+        <a class="about-gallery-item" href="2.webp" data-gallery-image="2.webp" data-gallery-alt="Community fellowship" aria-label="Enlarge Community fellowship photo"><span>Community fellowship</span></a>
       </div>
     </section>
 
