@@ -231,6 +231,13 @@
     .about-story-copy .history-card p::before,
     .about-story-copy .history-card p::after { content: none; }
     .about-story-copy .history-card p:hover { transform: none; box-shadow: none; }
+    .history-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); grid-template-rows: clamp(240px,25vw,330px) clamp(160px,16vw,210px); gap: 14px; width: 100%; margin: 0 0 34px; }
+    .history-gallery figure { position: relative; min-width: 0; margin: 0; overflow: hidden; border-radius: 18px; background: #081425; box-shadow: 0 16px 38px rgba(8,20,37,.12); }
+    .history-gallery figure:first-child { grid-column: 1/-1; }
+    .history-gallery img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .7s cubic-bezier(.2,.7,.2,1),filter .4s ease; }
+    .history-gallery figure:first-child img { object-position: center; }
+    .history-gallery figure::after { content: ''; position: absolute; inset: 0; pointer-events: none; border: 1px solid rgba(255,255,255,.38); border-radius: inherit; box-shadow: inset 0 -70px 80px rgba(5,15,28,.16); }
+    .history-gallery figure:hover img { transform: scale(1.035); filter: saturate(1.06); }
 
     /* ── BELIEFS ──────────────────────────────────────── */
     .beliefs {
@@ -550,6 +557,17 @@
       .about-story-copy .history-card p:last-child { padding-bottom: 0; }
       .about-story-copy .history-card p::before,
       .about-story-copy .history-card p::after { content: none; }
+      .history-gallery { grid-template-columns: 1fr 1fr; grid-template-rows: none; grid-auto-rows: auto; gap: 9px; margin-bottom: 24px; }
+      .history-gallery figure { aspect-ratio: 4/3; border-radius: 12px; box-shadow: 0 10px 24px rgba(8,20,37,.12); }
+      .history-gallery figure:first-child { grid-column: 1/-1; aspect-ratio: 2.16/1; }
+      .history-gallery figure:last-child { grid-column: 1/-1; aspect-ratio: 16/9; }
+      .history-gallery figure:hover img { transform: none; }
+      .about-story-copy .history-card { padding: 62px 15px 26px; border-radius: 18px; }
+      .about-story-copy .history-card::before { left: 20px; top: 27px; }
+      .about-story-copy .history-card::after { left: 128px; right: 20px; top: 34px; }
+      .about-story-copy .history-card p,
+      .about-story-copy .history-card p:nth-child(-n+2),
+      .about-story-copy .history-card p:nth-child(2) { padding: 13px 5px; font-size: 15px; line-height: 1.72; }
       .vision-band { grid-template-columns: 1fr; }
       .vision-band article { padding: 65px 6%; }
       .vision-band article:first-child { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.1); }
@@ -611,6 +629,12 @@
         <h2>From a living room<br>to a <em>living church.</em></h2>
         <div class="about-story-text">
           <div class="history-card">
+            <div class="history-gallery" aria-label="Moments from AAKHIKH's history">
+              <figure><img src="h1.jpeg" alt="An early gathering in AAKHIKH's journey" loading="lazy"></figure>
+              <figure><img src="h2.jpeg" alt="Members sharing fellowship at AAKHIKH" loading="lazy"></figure>
+              <figure><img src="h3.jpeg" alt="The AAKHIKH community growing together" loading="lazy"></figure>
+              <figure><img src="h4.jpeg" alt="A worship moment from AAKHIKH's history" loading="lazy"></figure>
+            </div>
             <p>Born from humble beginnings as a home fellowship of college students, young adults, and elderly individuals, Aakhikh began with a shared desire to seek God and build a community rooted in faith. What started as small gatherings of prayer, worship, and fellowship gradually grew in number and spirit, culminating in the official launch of Aakhikh’s first service on March 29, 2024.</p>
             <p>Today, two years later, Aakhikh has grown into a beacon of faith, love, and hope for Christians across the North-Eastern region of India and beyond. Through sermons, worship, fellowship, and outreach, the church remains committed to helping people grow in their relationship with God and creating a community where everyone feels welcomed and valued.</p>
             <p>At its heart, Aakhikh is committed to devotion, service, and community—serving others selflessly, nurturing spiritual growth, and encouraging believers to live out their faith by embodying Christ’s love.</p>
