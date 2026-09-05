@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aakhikh.com/sitemap.xml
+Sitemap: https://aakhikh.in/sitemap.xml
