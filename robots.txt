@@ -1,4 +1,5 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
 
 Sitemap: https://aakhikh.in/sitemap.xml
+
